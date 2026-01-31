@@ -19,18 +19,22 @@ export default function Home() {
   const today = new Date().toISOString().split("T")[0];
   const [checks, setChecks] = useState({});
   const [streak, setStreak] = useState(0);
+  const [mounted, setMounted] = useState(false);
 
   const totalExercises = Object.values(exercises).flat().length;
 
   useEffect(() => {
+    setMounted(true);
     const saved = localStorage.getItem(today);
     if (saved) setChecks(JSON.parse(saved));
+    updateStreak();
   }, [today]);
 
   useEffect(() => {
+    if (!mounted) return;
     localStorage.setItem(today, JSON.stringify(checks));
     updateStreak();
-  }, [checks]);
+  }, [checks, mounted]);
 
   const toggleCheck = (period, exercise) => {
     setChecks((prev) => ({
@@ -49,6 +53,8 @@ export default function Home() {
   const progress = Math.round((completedCount / totalExercises) * 100);
 
   const updateStreak = () => {
+    if (typeof window === "undefined") return;
+
     let count = 0;
     for (let i = 0; i < 365; i++) {
       const date = new Date();
@@ -69,23 +75,27 @@ export default function Home() {
   const getIcon = (period) =>
     period === "mañana" ? "🌅" : period === "tarde" ? "☀️" : "🌙";
 
-  // 📅 ÚLTIMOS 7 DÍAS
-  const last7Days = Array.from({ length: 7 }).map((_, i) => {
-    const date = new Date();
-    date.setDate(date.getDate() - i);
-    const key = date.toISOString().split("T")[0];
-    const data = JSON.parse(localStorage.getItem(key) || "{}");
-    const done = Object.values(data)
-      .flatMap((p) => Object.values(p || {}))
-      .filter(Boolean).length;
-    return { date: key, done };
-  });
+  // 📅 Últimos 7 días (solo cuando ya está montado en navegador)
+  const last7Days = mounted
+    ? Array.from({ length: 7 }).map((_, i) => {
+        const date = new Date();
+        date.setDate(date.getDate() - i);
+        const key = date.toISOString().split("T")[0];
+        const data = JSON.parse(localStorage.getItem(key) || "{}");
+        const done = Object.values(data)
+          .flatMap((p) => Object.values(p || {}))
+          .filter(Boolean).length;
+        return { date: key, done };
+      })
+    : [];
 
-  const weeklyAverage = Math.round(
-    (last7Days.reduce((acc, d) => acc + d.done, 0) /
-      (totalExercises * 7)) *
-      100
-  );
+  const weeklyAverage = mounted
+    ? Math.round(
+        (last7Days.reduce((acc, d) => acc + d.done, 0) /
+          (totalExercises * 7)) *
+          100
+      )
+    : 0;
 
   return (
     <main className="min-h-screen bg-slate-200 p-6 text-slate-900">
@@ -109,43 +119,43 @@ export default function Home() {
           </div>
         </div>
 
-        {/* AVISO SI NO HA HECHO NADA */}
         {completedCount === 0 && (
           <div className="mb-6 p-3 bg-red-100 border border-red-300 rounded-xl text-center font-semibold text-red-700">
             ⚠️ Aún no has hecho tus ejercicios hoy
           </div>
         )}
 
-        {/* RACHA */}
         <div className="mb-6 text-center text-lg font-semibold">
           🔥 Racha actual: {streak} día{streak !== 1 && "s"}
         </div>
 
-        {/* CALENDARIO MINI */}
-        <div className="mb-8">
-          <h3 className="font-semibold mb-2">📅 Últimos 7 días</h3>
-          <div className="grid grid-cols-7 gap-2 text-center text-sm">
-            {last7Days.map((d) => (
-              <div
-                key={d.date}
-                className={`p-2 rounded-lg ${
-                  d.done === totalExercises
-                    ? "bg-green-500 text-white"
-                    : d.done > 0
-                    ? "bg-yellow-300"
-                    : "bg-slate-300"
-                }`}
-              >
-                {new Date(d.date).getDate()}
+        {mounted && (
+          <>
+            <div className="mb-8">
+              <h3 className="font-semibold mb-2">📅 Últimos 7 días</h3>
+              <div className="grid grid-cols-7 gap-2 text-center text-sm">
+                {last7Days.map((d) => (
+                  <div
+                    key={d.date}
+                    className={`p-2 rounded-lg ${
+                      d.done === totalExercises
+                        ? "bg-green-500 text-white"
+                        : d.done > 0
+                        ? "bg-yellow-300"
+                        : "bg-slate-300"
+                    }`}
+                  >
+                    {new Date(d.date).getDate()}
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
+            </div>
 
-        {/* RESUMEN SEMANAL */}
-        <div className="mb-8 text-center font-medium">
-          📈 Cumplimiento últimos 7 días: {weeklyAverage}%
-        </div>
+            <div className="mb-8 text-center font-medium">
+              📈 Cumplimiento últimos 7 días: {weeklyAverage}%
+            </div>
+          </>
+        )}
 
         {Object.entries(exercises).map(([period, list]) => (
           <div
