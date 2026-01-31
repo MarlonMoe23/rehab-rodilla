@@ -3,15 +3,50 @@ import { useEffect, useState } from "react";
 
 const exercises = {
   mañana: [
-    "Extensión pasiva (talón elevado)",
-    "Contracción de cuádriceps",
-    "Elevación de pierna recta",
+    {
+      name: "Extensión pasiva (talón elevado)",
+      tabata: "10m/0s/1/0", // 5-10 minutos continuo
+      note: "5-10 minutos continuos - ORO para extensión"
+    },
+    {
+      name: "Contracción de cuádriceps",
+      tabata: "10s/5s/15/1m",
+      note: "Apretar muslo intentando pegar rodilla hacia abajo"
+    },
+    {
+      name: "Elevación de pierna recta",
+      tabata: "5s/5s/15/1m",
+      note: "Levantar 30cm, mantener arriba"
+    },
   ],
-  tarde: ["Deslizamientos de talón", "Bomba de tobillo"],
+  tarde: [
+    {
+      name: "Deslizamientos de talón",
+      tabata: "3s/3s/15/1m",
+      note: "Flexión suave, deslizar talón hacia glúteos SIN DOLOR"
+    },
+    {
+      name: "Bomba de tobillo",
+      tabata: "2m/0s/1/0",
+      note: "1-2 minutos continuos - bomba venosa"
+    },
+  ],
   noche: [
-    "Extensión pasiva (talón elevado)",
-    "Contracción de cuádriceps",
-    "Elevación de pierna recta",
+    {
+      name: "Extensión pasiva (talón elevado)",
+      tabata: "10m/0s/1/0",
+      note: "5-10 minutos continuos - repetir bloque mañana"
+    },
+    {
+      name: "Contracción de cuádriceps",
+      tabata: "10s/5s/15/1m",
+      note: "Repetir bloque mañana"
+    },
+    {
+      name: "Elevación de pierna recta",
+      tabata: "5s/5s/15/1m",
+      note: "Repetir bloque mañana"
+    },
   ],
 };
 
@@ -36,12 +71,12 @@ export default function Home() {
     updateStreak();
   }, [checks, mounted]);
 
-  const toggleCheck = (period, exercise) => {
+  const toggleCheck = (period, exerciseName) => {
     setChecks((prev) => ({
       ...prev,
       [period]: {
         ...prev[period],
-        [exercise]: !prev?.[period]?.[exercise],
+        [exerciseName]: !prev?.[period]?.[exerciseName],
       },
     }));
   };
@@ -157,6 +192,17 @@ export default function Home() {
           </>
         )}
 
+        {/* INFO TABATA */}
+        <div className="mb-6 p-4 bg-blue-50 border border-blue-300 rounded-xl">
+          <h3 className="font-semibold mb-2 text-blue-900">ℹ️ Formato Tabata</h3>
+          <p className="text-sm text-blue-800">
+            <strong>Trabajo/Descanso/Rondas/Tiempo entre tabatas</strong>
+          </p>
+          <p className="text-xs text-blue-700 mt-1">
+            Ejemplo: <code className="bg-blue-100 px-1 rounded">10s/5s/15/1m</code> = 10 seg trabajo, 5 seg descanso, 15 rondas, 1 min entre tabatas
+          </p>
+        </div>
+
         {Object.entries(exercises).map(([period, list]) => (
           <div
             key={period}
@@ -167,21 +213,35 @@ export default function Home() {
             </h2>
 
             {list.map((ex) => (
-              <label key={ex} className="flex items-center mb-3 gap-3 font-medium">
-                <input
-                  type="checkbox"
-                  checked={checks?.[period]?.[ex] || false}
-                  onChange={() => toggleCheck(period, ex)}
-                  className="w-5 h-5 accent-blue-600"
-                />
-                <span>{ex}</span>
-              </label>
+              <div key={ex.name} className="mb-4 pb-4 border-b last:border-0 last:pb-0">
+                <label className="flex items-start gap-3 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={checks?.[period]?.[ex.name] || false}
+                    onChange={() => toggleCheck(period, ex.name)}
+                    className="w-5 h-5 accent-blue-600 mt-0.5 flex-shrink-0"
+                  />
+                  <div className="flex-1">
+                    <div className="font-medium">
+                      {ex.name}
+                    </div>
+                    <div className="text-sm text-blue-600 font-mono mt-1">
+                      {ex.tabata}
+                    </div>
+                    {ex.note && (
+                      <div className="text-xs text-slate-600 mt-1">
+                        {ex.note}
+                      </div>
+                    )}
+                  </div>
+                </label>
+              </div>
             ))}
           </div>
         ))}
 
         <p className="text-center mt-10 text-sm text-slate-600 font-medium">
-          “Constancia diaria = rodilla que vuelve a moverse”
+          "Constancia diaria = rodilla que vuelve a moverse"
         </p>
       </div>
     </main>
