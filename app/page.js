@@ -1,17 +1,7 @@
 "use client"
 import { useEffect, useState } from "react"
 
-type Exercise = {
-  name: string
-  prep: number
-  work: number
-  rest: number
-  rounds: number
-  tabatas: number
-  restBetweenTabatas: number
-}
-
-const exercises: Exercise[] = [
+const exercises = [
   {
     name: "Extensión pasiva con talón elevado",
     prep: 10,
@@ -60,7 +50,7 @@ const exercises: Exercise[] = [
 ]
 
 export default function Home() {
-  const [completedToday, setCompletedToday] = useState<string[]>([])
+  const [completedToday, setCompletedToday] = useState([])
 
   useEffect(() => {
     const saved = localStorage.getItem("rehab-completed")
@@ -71,7 +61,7 @@ export default function Home() {
     localStorage.setItem("rehab-completed", JSON.stringify(completedToday))
   }, [completedToday])
 
-  const toggleExercise = (name: string) => {
+  const toggleExercise = (name) => {
     setCompletedToday((prev) =>
       prev.includes(name)
         ? prev.filter((e) => e !== name)
@@ -87,7 +77,6 @@ export default function Home() {
     <main style={{ padding: 20, fontFamily: "sans-serif" }}>
       <h1>Rehabilitación de Rodilla</h1>
 
-      {/* Barra de progreso */}
       <div style={{ margin: "20px 0" }}>
         <div
           style={{
@@ -108,7 +97,6 @@ export default function Home() {
         <p>{progress}% completado hoy</p>
       </div>
 
-      {/* Lista de ejercicios */}
       {exercises.map((ex) => {
         const done = completedToday.includes(ex.name)
         return (
@@ -124,7 +112,6 @@ export default function Home() {
           >
             <h3>{ex.name}</h3>
 
-            {/* INFO TIPO TABATA */}
             <div style={{ fontSize: 14, opacity: 0.85, lineHeight: 1.6 }}>
               ⏳ Prep: {ex.prep}s | 💪 Trabajo: {ex.work}s | 😮‍💨 Descanso: {ex.rest}s  
               <br />
