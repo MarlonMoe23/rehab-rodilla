@@ -196,10 +196,10 @@ export default function Home() {
         <div className="mb-6 p-4 bg-blue-50 border border-blue-300 rounded-xl">
           <h3 className="font-semibold mb-2 text-blue-900">ℹ️ Formato Tabata</h3>
           <p className="text-sm text-blue-800">
-            <strong>Trabajo/Descanso/Rondas/Tiempo entre tabatas</strong>
+            <strong>Trabajo/Descanso/Rondas/Tabatas</strong>
           </p>
           <p className="text-xs text-blue-700 mt-1">
-            Ejemplo: <code className="bg-blue-100 px-1 rounded">10s/5s/15/1m</code> = 10 seg trabajo, 5 seg descanso, 15 rondas, 1 min entre tabatas
+            Ejemplo: <code className="bg-blue-100 px-1 rounded">10s/5s/15/1m</code> = 10 seg trabajo, 5 seg descanso, 15 rondas, 1 tabata
           </p>
         </div>
 
