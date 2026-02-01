@@ -3,15 +3,7 @@ import { useEffect, useState } from "react";
 import exercisesData from "./ejercicios.json";
 
 export default function Home() {
-  // Obtener fecha en zona horaria de Ecuador (America/Guayaquil)
-  const getEcuadorDate = () => {
-    const now = new Date();
-    // Convertir a zona horaria de Ecuador (UTC-5)
-    const ecuadorTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/Guayaquil' }));
-    return ecuadorTime.toISOString().split("T")[0];
-  };
-  
-  const today = getEcuadorDate();
+  const today = new Date().toISOString().split("T")[0];
   const [checks, setChecks] = useState({});
   const [streak, setStreak] = useState(0);
   const [mounted, setMounted] = useState(false);
@@ -55,10 +47,9 @@ export default function Home() {
 
     let count = 0;
     for (let i = 0; i < 365; i++) {
-      const now = new Date();
-      const ecuadorTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/Guayaquil' }));
-      ecuadorTime.setDate(ecuadorTime.getDate() - i);
-      const key = ecuadorTime.toISOString().split("T")[0];
+      const date = new Date();
+      date.setDate(date.getDate() - i);
+      const key = date.toISOString().split("T")[0];
       const data = JSON.parse(localStorage.getItem(key) || "{}");
 
       const done = Object.values(data)
@@ -77,10 +68,9 @@ export default function Home() {
   // 📅 Últimos 7 días (solo cuando ya está montado en navegador)
   const last7Days = mounted
     ? Array.from({ length: 7 }).map((_, i) => {
-        const now = new Date();
-        const ecuadorTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/Guayaquil' }));
-        ecuadorTime.setDate(ecuadorTime.getDate() - i);
-        const key = ecuadorTime.toISOString().split("T")[0];
+        const date = new Date();
+        date.setDate(date.getDate() - i);
+        const key = date.toISOString().split("T")[0];
         const data = JSON.parse(localStorage.getItem(key) || "{}");
         const done = Object.values(data)
           .flatMap((p) => Object.values(p || {}))
@@ -201,7 +191,7 @@ export default function Home() {
             <strong>Trabajo/Descanso/Rondas/Tabatas</strong>
           </p>
           <p className="text-xs text-blue-700 mt-1">
-            Ejemplo: <code className="bg-blue-100 px-1 rounded">10s/5s/15/1m</code> = 10 seg trabajo, 5 seg descanso, 15 rondas, 1 tabata
+            Ejemplo: <code className="bg-blue-100 px-1 rounded">10s/5s/15/1</code> = 10 seg trabajo, 5 seg descanso, 15 rondas, 1 tabata
           </p>
         </div>
 
