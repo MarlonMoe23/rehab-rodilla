@@ -1,47 +1,98 @@
 {
   "mañana": [
     {
-      "name": "Extensión pasiva (talón elevadossssssss)",
-      "tabata": "10m/0s/1/0",
-      "note": "5-10 minutos continuos - ORO para extensión"
+      "name": "Bomba de tobillo",
+      "tabata": "1m/0s/1/1",
+      "note": "1 minuto continuo - bomba venosa"
+    },
+    {
+      "name": "Extensión pasiva (talón elevados)",
+      "tabata": "10m/0s/1/1",
+      "note": "10 minutos continuos - ORO para extensión"
     },
     {
       "name": "Contracción de cuádriceps",
-      "tabata": "10s/5s/15/1m",
+      "tabata": "10s/5s/10/2",
       "note": "Apretar muslo intentando pegar rodilla hacia abajo"
     },
     {
       "name": "Elevación de pierna recta",
-      "tabata": "5s/5s/15/1m",
+      "tabata": "10s/5s/10/2",
       "note": "Levantar 30cm, mantener arriba"
+    },
+  {
+      "name": "Extensión boca a abajo",
+      "tabata": "10s/5s/10/2",
+      "note": "Extender la rodilla separándola de la colchoneta"
     }
-  ],
+],
+
   "tarde": [
     {
-      "name": "Deslizamientos de talón",
-      "tabata": "3s/3s/15/1m",
-      "note": "Flexión suave, deslizar talón hacia glúteos SIN DOLOR"
+      "name": "Bomba de tobillo",
+      "tabata": "1m/0s/1/1",
+      "note": "1 minuto continuo - bomba venosa"
     },
     {
-      "name": "Bomba de tobillo",
-      "tabata": "2m/0s/1/0",
-      "note": "1-2 minutos continuos - bomba venosa"
-    }
-  ],
-  "noche": [
-    {
-      "name": "Extensión pasiva (talón elevado)",
-      "tabata": "10m/0s/1/0",
-      "note": "5-10 minutos continuos - repetir bloque mañana"
+      "name": "Extensión pasiva (talón elevados)",
+      "tabata": "10m/0s/1/1",
+      "note": "10 minutos continuos - ORO para extensión"
     },
     {
       "name": "Contracción de cuádriceps",
-      "tabata": "10s/5s/15/1m",
-      "note": "Repetir bloque mañana"
+      "tabata": "10s/5s/10/2",
+      "note": "Apretar muslo intentando pegar rodilla hacia abajo"
     },
     {
       "name": "Elevación de pierna recta",
-      "tabata": "5s/5s/15/1m",
+      "tabata": "10s/5s/10/2",
+      "note": "Levantar 30cm, mantener arriba"
+    },
+  {
+      "name": "Extensión boca a abajo",
+      "tabata": "10s/5s/10/2",
+      "note": "Extender la rodilla separándola de la colchoneta"
+    }
+
+  ],
+  "noche": [
+    {
+      "name": "Bomba de tobillo",
+      "tabata": "1m/0s/1/1",
+      "note": "1 minuto continuo - bomba venosa"
+    },
+    {
+      "name": "Extensión pasiva (talón elevados)",
+      "tabata": "10m/0s/1/1",
+      "note": "10 minutos continuos - ORO para extensión"
+    },
+    {
+      "name": "Contracción de cuádriceps",
+      "tabata": "10s/5s/10/2",
+      "note": "Apretar muslo intentando pegar rodilla hacia abajo"
+    },
+    {
+      "name": "Elevación de pierna recta",
+      "tabata": "10s/5s/10/2",
+      "note": "Levantar 30cm, mantener arriba"
+    },
+  {
+      "name": "Extensión boca a abajo",
+      "tabata": "10s/5s/10/2",
+      "note": "Extender la rodilla separándola de la colchoneta"
+    }
+
+  ]
+
+ "biofisio": [
+    {
+      "name": "Rutina 4",
+      "tabata": "10s/5s/10/2",
+      "note": ""
+    },
+    {
+      "name": "Rutina 5",
+      "tabata": "10s/5s/10/2",
       "note": "Repetir bloque mañana"
     }
   ]
