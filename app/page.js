@@ -1,60 +1,15 @@
 "use client";
 import { useEffect, useState } from "react";
-
-const exercises = {
-  mañana: [
-    {
-      name: "Extensión pasiva (talón elevado)",
-      tabata: "10m/0s/1/0", // 5-10 minutos continuo
-      note: "5-10 minutos continuos - ORO para extensión"
-    },
-    {
-      name: "Contracción de cuádriceps",
-      tabata: "10s/5s/15/1m",
-      note: "Apretar muslo intentando pegar rodilla hacia abajo"
-    },
-    {
-      name: "Elevación de pierna recta",
-      tabata: "5s/5s/15/1m",
-      note: "Levantar 30cm, mantener arriba"
-    },
-  ],
-  tarde: [
-    {
-      name: "Deslizamientos de talón",
-      tabata: "3s/3s/15/1m",
-      note: "Flexión suave, deslizar talón hacia glúteos SIN DOLOR"
-    },
-    {
-      name: "Bomba de tobillo",
-      tabata: "2m/0s/1/0",
-      note: "1-2 minutos continuos - bomba venosa"
-    },
-  ],
-  noche: [
-    {
-      name: "Extensión pasiva (talón elevado)",
-      tabata: "10m/0s/1/0",
-      note: "5-10 minutos continuos - repetir bloque mañana"
-    },
-    {
-      name: "Contracción de cuádriceps",
-      tabata: "10s/5s/15/1m",
-      note: "Repetir bloque mañana"
-    },
-    {
-      name: "Elevación de pierna recta",
-      tabata: "5s/5s/15/1m",
-      note: "Repetir bloque mañana"
-    },
-  ],
-};
+import exercisesData from "./ejercicios.json";
 
 export default function Home() {
   const today = new Date().toISOString().split("T")[0];
   const [checks, setChecks] = useState({});
   const [streak, setStreak] = useState(0);
   const [mounted, setMounted] = useState(false);
+
+  // Ahora los ejercicios vienen del JSON
+  const exercises = exercisesData;
 
   const totalExercises = Object.values(exercises).flat().length;
 
