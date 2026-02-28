@@ -1,35 +1,34 @@
 {
   "Quad Sets": [
-    { "name": "Contracción de cuádriceps con toalla", "tabata": "5s/3s/15/3", "note": "Empujar rodilla hacia abajo, máxima contracción del cuádriceps (activar VMO)" },
-    { "name": "Contracción de cuádriceps con toalla", "tabata": "5s/3s/15/3", "note": "Empujar rodilla hacia abajo, máxima contracción del cuádriceps" },
-    { "name": "Contracción de cuádriceps con toalla", "tabata": "5s/3s/15/2", "note": "Sesión más ligera, enfoque en activación" }
+    { "name": "Contracción de cuádriceps con toalla", "tabata": "5s/3s/15/3", "note": "Acostado boca arriba, aprieta el cuadriceps,empuja rodilla hacia abajo" },
+    { "name": "Contracción de cuádriceps con toalla", "tabata": "5s/3s/15/3", "note": "Máxima contracción del cuádriceps (activar VMO)" },
+    { "name": "Contracción de cuádriceps con toalla", "tabata": "5s/3s/15/2", "note": "Talón se levanta" }
   ],
   "Straight Leg Raise": [
-    { "name": "Elevación de pierna recta", "tabata": "3s/3s/12/3", "note": "Bloquear rodilla antes de elevar, mantener recta lo más posible" },
-    { "name": "Elevación de pierna recta", "tabata": "3s/3s/12/3", "note": "Bloquear rodilla antes de elevar" }
+    { "name": "Elevación de pierna recta", "tabata": "3s/3s/12/3", "note": "Acostado boca arriba, Aprieta cuadriceps fuerte, bloquea rodilla antes de elevar, mantener recta lo más posible, levanta la pierna lentamente, baja lento" },
+    { "name": "Elevación de pierna recta", "tabata": "3s/3s/12/3", "note": "Si se dobla un poco está bien, pero intenta mejorar cada día" }
   ],
   "Terminal Knee Extension Static": [
     { "name": "Extensión terminal con banda (estática)", "tabata": "5s/3s/15/3", "note": "Enderezar completamente la rodilla contra la banda y apretar cuádriceps" },
     { "name": "Extensión terminal con banda (estática)", "tabata": "5s/3s/15/3", "note": "Extensión completa contra resistencia" }
   ],
   "Terminal Knee Extension Dynamic": [
-    { "name": "Extensión terminal con banda (dinámica)", "tabata": "2s/3s/15/3", "note": "Extender y regresar lento manteniendo control muscular" },
-    { "name": "Extensión terminal con banda (dinámica)", "tabata": "2s/3s/15/3", "note": "Movimiento controlado completo" },
-    { "name": "Extensión terminal con banda (dinámica)", "tabata": "2s/3s/15/2", "note": "Activación final del cuádriceps" },
-    { "name": "Extensión terminal con banda (dinámica)", "tabata": "5s/3s/15/2", "note": "Ejercicio más importante para eliminar la cojera" }
-  ],
-  "Single Leg Stance": [
-    { "name": "Apoyo unipodal con bloqueo", "tabata": "10s/5s/15/3", "note": "Parado solo en la pierna operada, bloquear rodilla con el cuádriceps" },
-    { "name": "Apoyo unipodal con bloqueo", "tabata": "10s/5s/15/3", "note": "Estabilidad y activación funcional" },
-    { "name": "Apoyo unipodal con bloqueo", "tabata": "10s/5s/10/2", "note": "Reforzar patrón neuromuscular" }
+    { "name": "Extensión terminal con banda (dinámica)", "tabata": "1s/3s/15/3", "note": "Extender y regresar lento manteniendo control muscular" },
+    { "name": "Extensión terminal con banda (dinámica)", "tabata": "1s/3s/15/3", "note": "Movimiento controlado completo" }
+   
   ],
   "Weight Shift": [
     { "name": "Transferencia de peso", "tabata": "5s/3s/15/3", "note": "Transferir peso a la pierna operada y activar cuádriceps" },
-    { "name": "Transferencia de peso", "tabata": "5s/3s/15/3", "note": "Reeducación neuromuscular" }
+    { "name": "Transferencia de peso", "tabata": "5s/3s/15/3", "note": "Esto enseña al cerebro a confiar en la pierna" }
+  ],
+"Single Leg Stance": [
+    { "name": "Apoyo unipodal con bloqueo", "tabata": "10s/5s/15/1", "note": "Parado solo en la pierna operada, bloquear rodilla con el cuádriceps" },
+        { "name": "Apoyo unipodal con bloqueo", "tabata": "10s/5s/10/1", "note": "Reforzar patrón neuromuscular" }
+  
   ],
   "Gait Training": [
     { "name": "Caminata consciente", "tabata": "600s/0s/1/1", "note": "Caminar 10 minutos activando cuádriceps al apoyar el pie" },
-    { "name": "Caminata consciente", "tabata": "600s/0s/1/1", "note": "Caminar activando cuádriceps" },
-    { "name": "Caminata consciente", "tabata": "300s/0s/1/1", "note": "5 minutos adicionales de reeducación de marcha" }
+    { "name": "Caminata consciente", "tabata": "600s/0s/1/1", "note": "Aprieto el cuádriceps cuando el pie toca el piso" },
+    { "name": "Caminata consciente", "tabata": "300s/0s/1/1", "note": "Aprieto el cuádriceps cuando el pie toca el piso" }
   ]
 }
