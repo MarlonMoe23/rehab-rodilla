@@ -1,99 +1,108 @@
 {
   "mañana": [
     {
-      "name": "Bomba de tobillo",
-      "tabata": "1m/0s/1/1",
-      "note": "1 minuto continuo - bomba venosa"
-    },
-    {
-      "name": "Extensión pasiva (talón elevados)",
-      "tabata": "10m/0s/1/1",
-      "note": "10 minutos continuos - ORO para extensión"
-    },
-    {
-      "name": "Contracción de cuádriceps",
-      "tabata": "10s/5s/10/2",
-      "note": "Apretar muslo intentando pegar rodilla hacia abajo"
+      "name": "Contracción de cuádriceps con toalla",
+      "tabata": "5s/3s/15/3",
+      "note": "Empujar rodilla hacia abajo, máxima contracción del cuádriceps (activar VMO)"
     },
     {
       "name": "Elevación de pierna recta",
-      "tabata": "10s/5s/10/2",
-      "note": "Levantar 30cm, mantener arriba"
+      "tabata": "3s/3s/12/3",
+      "note": "Bloquear rodilla antes de elevar, mantener recta lo más posible"
     },
-  {
-      "name": "Extensión boca a abajo",
-      "tabata": "10s/5s/10/2",
-      "note": "Extender la rodilla separándola de la colchoneta"
+    {
+      "name": "Extensión terminal con banda (estática)",
+      "tabata": "5s/3s/15/3",
+      "note": "Enderezar completamente la rodilla contra la banda y apretar cuádriceps"
+    },
+    {
+      "name": "Extensión terminal con banda (dinámica)",
+      "tabata": "2s/3s/15/3",
+      "note": "Extender y regresar lento manteniendo control muscular"
+    },
+    {
+      "name": "Apoyo unipodal con bloqueo",
+      "tabata": "10s/5s/15/3",
+      "note": "Parado solo en la pierna operada, bloquear rodilla con el cuádriceps"
+    },
+    {
+      "name": "Transferencia de peso",
+      "tabata": "5s/3s/15/3",
+      "note": "Transferir peso a la pierna operada y activar cuádriceps"
+    },
+    {
+      "name": "Caminata consciente",
+      "tabata": "600s/0s/1/1",
+      "note": "Caminar 10 minutos activando cuádriceps al apoyar el pie"
     }
-],
+  ],
 
   "tarde": [
     {
-      "name": "Bomba de tobillo",
-      "tabata": "1m/0s/1/1",
-      "note": "1 minuto continuo - bomba venosa"
-    },
-    {
-      "name": "Extensión pasiva (talón elevados)",
-      "tabata": "10m/0s/1/1",
-      "note": "10 minutos continuos - ORO para extensión"
-    },
-    {
-      "name": "Contracción de cuádriceps",
-      "tabata": "10s/5s/10/2",
-      "note": "Apretar muslo intentando pegar rodilla hacia abajo"
+      "name": "Contracción de cuádriceps con toalla",
+      "tabata": "5s/3s/15/3",
+      "note": "Empujar rodilla hacia abajo, máxima contracción del cuádriceps"
     },
     {
       "name": "Elevación de pierna recta",
-      "tabata": "10s/5s/10/2",
-      "note": "Levantar 30cm, mantener arriba"
+      "tabata": "3s/3s/12/3",
+      "note": "Bloquear rodilla antes de elevar"
     },
-  {
-      "name": "Extensión boca a abajo",
-      "tabata": "10s/5s/10/2",
-      "note": "Extender la rodilla separándola de la colchoneta"
+    {
+      "name": "Extensión terminal con banda (estática)",
+      "tabata": "5s/3s/15/3",
+      "note": "Extensión completa contra resistencia"
+    },
+    {
+      "name": "Extensión terminal con banda (dinámica)",
+      "tabata": "2s/3s/15/3",
+      "note": "Movimiento controlado completo"
+    },
+    {
+      "name": "Apoyo unipodal con bloqueo",
+      "tabata": "10s/5s/15/3",
+      "note": "Estabilidad y activación funcional"
+    },
+    {
+      "name": "Transferencia de peso",
+      "tabata": "5s/3s/15/3",
+      "note": "Reeducación neuromuscular"
+    },
+    {
+      "name": "Caminata consciente",
+      "tabata": "600s/0s/1/1",
+      "note": "Caminar activando cuádriceps"
     }
-
   ],
+
   "noche": [
     {
-      "name": "Bomba de tobillo",
-      "tabata": "1m/0s/1/1",
-      "note": "1 minuto continuo - bomba venosa"
+      "name": "Contracción de cuádriceps con toalla",
+      "tabata": "5s/3s/15/2",
+      "note": "Sesión más ligera, enfoque en activación"
     },
     {
-      "name": "Extensión pasiva (talón elevados)",
-      "tabata": "10m/0s/1/1",
-      "note": "10 minutos continuos - ORO para extensión"
+      "name": "Extensión terminal con banda (dinámica)",
+      "tabata": "2s/3s/15/2",
+      "note": "Activación final del cuádriceps"
     },
     {
-      "name": "Contracción de cuádriceps",
+      "name": "Apoyo unipodal con bloqueo",
       "tabata": "10s/5s/10/2",
-      "note": "Apretar muslo intentando pegar rodilla hacia abajo"
-    },
-    {
-      "name": "Elevación de pierna recta",
-      "tabata": "10s/5s/10/2",
-      "note": "Levantar 30cm, mantener arriba"
-    },
-  {
-      "name": "Extensión boca a abajo",
-      "tabata": "10s/5s/10/2",
-      "note": "Extender la rodilla separándola de la colchoneta"
+      "note": "Reforzar patrón neuromuscular"
     }
-
   ],
 
- "biofisio": [
+  "biofisio": [
     {
-      "name": "Rutina 4",
-      "tabata": "10s/5s/10/2",
-      "note": ""
+      "name": "Extensión terminal con banda (extra)",
+      "tabata": "5s/3s/15/2",
+      "note": "Ejercicio más importante para eliminar la cojera"
     },
     {
-      "name": "Rutina 5",
-      "tabata": "10s/5s/10/2",
-      "note": "Repetir bloque mañana"
+      "name": "Caminata consciente extra",
+      "tabata": "300s/0s/1/1",
+      "note": "5 minutos adicionales de reeducación de marcha"
     }
   ]
 }
