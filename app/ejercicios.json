@@ -1,29 +1,37 @@
 {
+  "VMO Activation": [
+    { "name": "Contracción cuádriceps con toalla bajo talón 1", "tabata": "5s/3s/15/3", "note": "Acostado boca arriba, aprieta el cuadriceps,empuja rodilla hacia abajo" },
+    { "name": "Contracción cuádriceps con toalla bajo talón 2", "tabata": "5s/3s/15/3", "note": "Máxima contracción del cuádriceps (activar VMO)" },
+    { "name": "Contracción cuádriceps con toalla bajo talón 3", "tabata": "5s/3s/15/2", "note": "Talón se levanta" }
+  ],
+
+
+
   "Quad Sets": [
-    { "name": "Contracción de cuádriceps con toalla", "tabata": "5s/3s/15/3", "note": "Acostado boca arriba, aprieta el cuadriceps,empuja rodilla hacia abajo" },
-    { "name": "Contracción de cuádriceps con toalla", "tabata": "5s/3s/15/3", "note": "Máxima contracción del cuádriceps (activar VMO)" },
-    { "name": "Contracción de cuádriceps con toalla", "tabata": "5s/3s/15/2", "note": "Talón se levanta" }
+    { "name": "Contracción de cuádriceps con toalla 1", "tabata": "5s/3s/15/3", "note": "Acostado boca arriba, aprieta el cuadriceps,empuja rodilla hacia abajo" },
+    { "name": "Contracción de cuádriceps con toalla 2", "tabata": "5s/3s/15/3", "note": "Máxima contracción del cuádriceps (activar VMO)" },
+    { "name": "Contracción de cuádriceps con toalla 3", "tabata": "5s/3s/15/2", "note": "Talón se levanta" }
   ],
   "Straight Leg Raise": [
-    { "name": "Elevación de pierna recta", "tabata": "3s/3s/12/3", "note": "Acostado boca arriba, Aprieta cuadriceps fuerte, bloquea rodilla antes de elevar, mantener recta lo más posible, levanta la pierna lentamente, baja lento" },
-    { "name": "Elevación de pierna recta", "tabata": "3s/3s/12/3", "note": "Si se dobla un poco está bien, pero intenta mejorar cada día" }
+    { "name": "Elevación de pierna recta 1", "tabata": "3s/3s/12/3", "note": "Acostado boca arriba, Aprieta cuadriceps fuerte, bloquea rodilla antes de elevar, mantener recta lo más posible, levanta la pierna lentamente, baja lento" },
+    { "name": "Elevación de pierna recta 2", "tabata": "3s/3s/12/3", "note": "Si se dobla un poco está bien, pero intenta mejorar cada día" }
   ],
   "Terminal Knee Extension Static": [
-    { "name": "Extensión terminal con banda (estática)", "tabata": "5s/3s/15/3", "note": "Enderezar completamente la rodilla contra la banda y apretar cuádriceps" },
-    { "name": "Extensión terminal con banda (estática)", "tabata": "5s/3s/15/3", "note": "Extensión completa contra resistencia" }
+    { "name": "Extensión terminal con banda (estática) 1", "tabata": "5s/3s/15/3", "note": "Enderezar completamente la rodilla contra la banda y apretar cuádriceps" },
+    { "name": "Extensión terminal con banda (estática) 2", "tabata": "5s/3s/15/3", "note": "Extensión completa contra resistencia" }
   ],
   "Terminal Knee Extension Dynamic": [
-    { "name": "Extensión terminal con banda (dinámica)", "tabata": "1s/3s/15/3", "note": "Extender y regresar lento manteniendo control muscular" },
-    { "name": "Extensión terminal con banda (dinámica)", "tabata": "1s/3s/15/3", "note": "Movimiento controlado completo" }
+    { "name": "Extensión terminal con banda (dinámica) 1", "tabata": "1s/3s/15/3", "note": "Extender y regresar lento manteniendo control muscular" },
+    { "name": "Extensión terminal con banda (dinámica) 2", "tabata": "1s/3s/15/3", "note": "Movimiento controlado completo" }
    
   ],
   "Weight Shift": [
-    { "name": "Transferencia de peso", "tabata": "5s/3s/15/3", "note": "Transferir peso a la pierna operada y activar cuádriceps" },
-    { "name": "Transferencia de peso", "tabata": "5s/3s/15/3", "note": "Esto enseña al cerebro a confiar en la pierna" }
+    { "name": "Transferencia de peso 1", "tabata": "5s/3s/15/3", "note": "Transferir peso a la pierna operada y activar cuádriceps" },
+    { "name": "Transferencia de peso 2", "tabata": "5s/3s/15/3", "note": "Esto enseña al cerebro a confiar en la pierna" }
   ],
 "Single Leg Stance": [
-    { "name": "Apoyo unipodal con bloqueo", "tabata": "10s/5s/15/1", "note": "Parado solo en la pierna operada, bloquear rodilla con el cuádriceps" },
-        { "name": "Apoyo unipodal con bloqueo", "tabata": "10s/5s/10/1", "note": "Reforzar patrón neuromuscular" }
+    { "name": "Apoyo unipodal con bloqueo 1", "tabata": "10s/5s/15/1", "note": "Parado solo en la pierna operada, bloquear rodilla con el cuádriceps" },
+    { "name": "Apoyo unipodal con bloqueo 2", "tabata": "10s/5s/10/1", "note": "Reforzar patrón neuromuscular" }
   
   ],
   "Gait Training": [
