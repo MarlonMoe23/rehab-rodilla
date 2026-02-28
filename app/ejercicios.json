@@ -1,108 +1,24 @@
-{
-  "mañana": [
-    {
-      "name": "Contracción de cuádriceps con toalla",
-      "tabata": "5s/3s/15/3",
-      "note": "Empujar rodilla hacia abajo, máxima contracción del cuádriceps (activar VMO)"
-    },
-    {
-      "name": "Elevación de pierna recta",
-      "tabata": "3s/3s/12/3",
-      "note": "Bloquear rodilla antes de elevar, mantener recta lo más posible"
-    },
-    {
-      "name": "Extensión terminal con banda (estática)",
-      "tabata": "5s/3s/15/3",
-      "note": "Enderezar completamente la rodilla contra la banda y apretar cuádriceps"
-    },
-    {
-      "name": "Extensión terminal con banda (dinámica)",
-      "tabata": "2s/3s/15/3",
-      "note": "Extender y regresar lento manteniendo control muscular"
-    },
-    {
-      "name": "Apoyo unipodal con bloqueo",
-      "tabata": "10s/5s/15/3",
-      "note": "Parado solo en la pierna operada, bloquear rodilla con el cuádriceps"
-    },
-    {
-      "name": "Transferencia de peso",
-      "tabata": "5s/3s/15/3",
-      "note": "Transferir peso a la pierna operada y activar cuádriceps"
-    },
-    {
-      "name": "Caminata consciente",
-      "tabata": "600s/0s/1/1",
-      "note": "Caminar 10 minutos activando cuádriceps al apoyar el pie"
-    }
-  ],
+[
+  { "name": "Contracción de cuádriceps con toalla", "tabata": "5s/3s/15/3", "note": "Empujar rodilla hacia abajo, máxima contracción del cuádriceps (activar VMO)" },
+  { "name": "Elevación de pierna recta", "tabata": "3s/3s/12/3", "note": "Bloquear rodilla antes de elevar, mantener recta lo más posible" },
+  { "name": "Extensión terminal con banda (estática)", "tabata": "5s/3s/15/3", "note": "Enderezar completamente la rodilla contra la banda y apretar cuádriceps" },
+  { "name": "Extensión terminal con banda (dinámica)", "tabata": "2s/3s/15/3", "note": "Extender y regresar lento manteniendo control muscular" },
+  { "name": "Apoyo unipodal con bloqueo", "tabata": "10s/5s/15/3", "note": "Parado solo en la pierna operada, bloquear rodilla con el cuádriceps" },
+  { "name": "Transferencia de peso", "tabata": "5s/3s/15/3", "note": "Transferir peso a la pierna operada y activar cuádriceps" },
+  { "name": "Caminata consciente", "tabata": "600s/0s/1/1", "note": "Caminar 10 minutos activando cuádriceps al apoyar el pie" },
 
-  "tarde": [
-    {
-      "name": "Contracción de cuádriceps con toalla",
-      "tabata": "5s/3s/15/3",
-      "note": "Empujar rodilla hacia abajo, máxima contracción del cuádriceps"
-    },
-    {
-      "name": "Elevación de pierna recta",
-      "tabata": "3s/3s/12/3",
-      "note": "Bloquear rodilla antes de elevar"
-    },
-    {
-      "name": "Extensión terminal con banda (estática)",
-      "tabata": "5s/3s/15/3",
-      "note": "Extensión completa contra resistencia"
-    },
-    {
-      "name": "Extensión terminal con banda (dinámica)",
-      "tabata": "2s/3s/15/3",
-      "note": "Movimiento controlado completo"
-    },
-    {
-      "name": "Apoyo unipodal con bloqueo",
-      "tabata": "10s/5s/15/3",
-      "note": "Estabilidad y activación funcional"
-    },
-    {
-      "name": "Transferencia de peso",
-      "tabata": "5s/3s/15/3",
-      "note": "Reeducación neuromuscular"
-    },
-    {
-      "name": "Caminata consciente",
-      "tabata": "600s/0s/1/1",
-      "note": "Caminar activando cuádriceps"
-    }
-  ],
+  { "name": "Contracción de cuádriceps con toalla", "tabata": "5s/3s/15/3", "note": "Empujar rodilla hacia abajo, máxima contracción del cuádriceps" },
+  { "name": "Elevación de pierna recta", "tabata": "3s/3s/12/3", "note": "Bloquear rodilla antes de elevar" },
+  { "name": "Extensión terminal con banda (estática)", "tabata": "5s/3s/15/3", "note": "Extensión completa contra resistencia" },
+  { "name": "Extensión terminal con banda (dinámica)", "tabata": "2s/3s/15/3", "note": "Movimiento controlado completo" },
+  { "name": "Apoyo unipodal con bloqueo", "tabata": "10s/5s/15/3", "note": "Estabilidad y activación funcional" },
+  { "name": "Transferencia de peso", "tabata": "5s/3s/15/3", "note": "Reeducación neuromuscular" },
+  { "name": "Caminata consciente", "tabata": "600s/0s/1/1", "note": "Caminar activando cuádriceps" },
 
-  "noche": [
-    {
-      "name": "Contracción de cuádriceps con toalla",
-      "tabata": "5s/3s/15/2",
-      "note": "Sesión más ligera, enfoque en activación"
-    },
-    {
-      "name": "Extensión terminal con banda (dinámica)",
-      "tabata": "2s/3s/15/2",
-      "note": "Activación final del cuádriceps"
-    },
-    {
-      "name": "Apoyo unipodal con bloqueo",
-      "tabata": "10s/5s/10/2",
-      "note": "Reforzar patrón neuromuscular"
-    }
-  ],
+  { "name": "Contracción de cuádriceps con toalla", "tabata": "5s/3s/15/2", "note": "Sesión más ligera, enfoque en activación" },
+  { "name": "Extensión terminal con banda (dinámica)", "tabata": "2s/3s/15/2", "note": "Activación final del cuádriceps" },
+  { "name": "Apoyo unipodal con bloqueo", "tabata": "10s/5s/10/2", "note": "Reforzar patrón neuromuscular" },
 
-  "biofisio": [
-    {
-      "name": "Extensión terminal con banda (extra)",
-      "tabata": "5s/3s/15/2",
-      "note": "Ejercicio más importante para eliminar la cojera"
-    },
-    {
-      "name": "Caminata consciente extra",
-      "tabata": "300s/0s/1/1",
-      "note": "5 minutos adicionales de reeducación de marcha"
-    }
-  ]
-}
+  { "name": "Extensión terminal con banda (extra)", "tabata": "5s/3s/15/2", "note": "Ejercicio más importante para eliminar la cojera" },
+  { "name": "Caminata consciente extra", "tabata": "300s/0s/1/1", "note": "5 minutos adicionales de reeducación de marcha" }
+]
