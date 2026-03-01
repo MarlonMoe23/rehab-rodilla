@@ -72,7 +72,7 @@ export default function Home() {
   };
 
   const getIcon = (period) =>
-    period === "mañana" ? "🌅" : period === "tarde" ? "☀️" : "🌙";
+    period === "mañana" ? "🌅" : period === "tarde" ? "☀️" : "🤸";
 
   // 📅 Últimos 7 días (solo cuando ya está montado en navegador)
   const last7Days = mounted
@@ -201,7 +201,7 @@ export default function Home() {
             <strong>Trabajo/Descanso/Rondas/Tabatas</strong>
           </p>
           <p className="text-xs text-blue-700 mt-1">
-            Ejemplo: <code className="bg-blue-100 px-1 rounded">10s/5s/15/1m</code> = 10 seg trabajo, 5 seg descanso, 15 rondas, 1 tabata
+            Ejemplo: <code className="bg-blue-100 px-1 rounded">10s/5s/15/1</code> = 10 seg trabajo, 5 seg descanso, 15 rondas, 1 tabata
           </p>
         </div>
 

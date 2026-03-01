@@ -1,12 +1,11 @@
 {
   "VMO Activation": [
-    { "name": "Contracción cuádriceps con toalla bajo talón 1", "tabata": "5s/3s/15/3", "note": "Acostado boca arriba, aprieta el cuadriceps,empuja rodilla hacia abajo" },
-    { "name": "Contracción cuádriceps con toalla bajo talón 2", "tabata": "5s/3s/15/3", "note": "Máxima contracción del cuádriceps (activar VMO)" },
-    { "name": "Contracción cuádriceps con toalla bajo talón 3", "tabata": "5s/3s/15/2", "note": "Talón se levanta" }
+    { "name": "Contracción cuádriceps con toalla bajo talón 1", "tabata": "10s/3s/10/3", "note": "Acostado boca arriba, aprieta el cuadriceps,empuja rodilla hacia abajo" },
+    { "name": "Contracción cuádriceps pierna recta 1", "tabata": "10s/3s/10/3", "note": "Sentado, aprieta el cuadriceps" },
+    { "name": "Contracción cuádriceps con toalla bajo talón 2", "tabata": "10s/3s/10/3", "note": "Máxima contracción del cuádriceps" },
+    { "name": "Contracción cuádriceps pierna recta 2", "tabata": "10s/3s/10/3", "note": "Sentado, aprieta el cuadriceps" },
+    { "name": "Contracción cuádriceps con toalla bajo talón 3", "tabata": "10s/3s/10/2", "note": "Talón se levanta" }
   ],
-
-
-
   "Quad Sets": [
     { "name": "Contracción de cuádriceps con toalla 1", "tabata": "5s/3s/15/3", "note": "Acostado boca arriba, aprieta el cuadriceps,empuja rodilla hacia abajo" },
     { "name": "Contracción de cuádriceps con toalla 2", "tabata": "5s/3s/15/3", "note": "Máxima contracción del cuádriceps (activar VMO)" },
