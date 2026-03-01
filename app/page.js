@@ -2,24 +2,33 @@
 import { useEffect, useState } from "react";
 import exercisesData from "./ejercicios.json";
 
+const getEcuadorDate = () => {
+  return new Date().toLocaleDateString('en-CA', { timeZone: 'America/Guayaquil' });
+};
+
 export default function Home() {
-  // Obtener fecha en zona horaria de Ecuador (America/Guayaquil)
-  const getEcuadorDate = () => {
-    const now = new Date();
-    // Convertir a zona horaria de Ecuador (UTC-5)
-    const ecuadorTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/Guayaquil' }));
-    return ecuadorTime.toISOString().split("T")[0];
-  };
-  
-  const today = getEcuadorDate();
+  const [today, setToday] = useState(getEcuadorDate);
   const [checks, setChecks] = useState({});
   const [streak, setStreak] = useState(0);
   const [mounted, setMounted] = useState(false);
 
-  // Ahora los ejercicios vienen del JSON
   const exercises = exercisesData;
-
   const totalExercises = Object.values(exercises).flat().length;
+
+  // Detectar cambio de día cada minuto
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const newDate = getEcuadorDate();
+      setToday((prev) => {
+        if (prev !== newDate) {
+          setChecks({});
+        }
+        return newDate;
+      });
+    }, 60_000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     setMounted(true);
@@ -55,10 +64,9 @@ export default function Home() {
 
     let count = 0;
     for (let i = 0; i < 365; i++) {
-      const now = new Date();
-      const ecuadorTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/Guayaquil' }));
-      ecuadorTime.setDate(ecuadorTime.getDate() - i);
-      const key = ecuadorTime.toISOString().split("T")[0];
+      const d = new Date();
+      d.setDate(d.getDate() - i);
+      const key = d.toLocaleDateString('en-CA', { timeZone: 'America/Guayaquil' });
       const data = JSON.parse(localStorage.getItem(key) || "{}");
 
       const done = Object.values(data)
@@ -74,13 +82,11 @@ export default function Home() {
   const getIcon = (period) =>
     period === "mañana" ? "🌅" : period === "tarde" ? "☀️" : "🤸";
 
-  // 📅 Últimos 7 días (solo cuando ya está montado en navegador)
   const last7Days = mounted
     ? Array.from({ length: 7 }).map((_, i) => {
-        const now = new Date();
-        const ecuadorTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/Guayaquil' }));
-        ecuadorTime.setDate(ecuadorTime.getDate() - i);
-        const key = ecuadorTime.toISOString().split("T")[0];
+        const d = new Date();
+        d.setDate(d.getDate() - i);
+        const key = d.toLocaleDateString('en-CA', { timeZone: 'America/Guayaquil' });
         const data = JSON.parse(localStorage.getItem(key) || "{}");
         const done = Object.values(data)
           .flatMap((p) => Object.values(p || {}))
@@ -145,7 +151,7 @@ export default function Home() {
                         : "bg-slate-300"
                     }`}
                   >
-                    {new Date(d.date).getDate()}
+                    {new Date(d.date + "T12:00:00").getDate()}
                   </div>
                 ))}
               </div>
@@ -176,9 +182,7 @@ export default function Home() {
                     className="w-5 h-5 accent-blue-600 mt-0.5 flex-shrink-0"
                   />
                   <div className="flex-1">
-                    <div className="font-medium">
-                      {ex.name}
-                    </div>
+                    <div className="font-medium">{ex.name}</div>
                     <div className="text-sm text-blue-600 font-mono mt-1">
                       {ex.tabata}
                     </div>
