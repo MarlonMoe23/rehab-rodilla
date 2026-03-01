@@ -209,6 +209,20 @@ export default function Home() {
           </p>
         </div>
 
+<button
+  onClick={() => {
+    if (confirm("¿Borrar toda la data guardada y empezar desde cero?")) {
+      localStorage.clear();
+      setChecks({});
+      setStreak(0);
+    }
+  }}
+  className="w-full mt-4 p-3 bg-red-100 border border-red-300 rounded-xl text-red-700 font-semibold text-sm"
+>
+  🗑️ Resetear toda la data
+</button>
+
+
         <p className="text-center mt-10 text-sm text-slate-600 font-medium">
           "Constancia diaria = rodilla que vuelve a moverse"
         </p>
