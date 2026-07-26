@@ -112,13 +112,13 @@ export default function Home() {
     : 0;
 
   return (
-    <main className="min-h-screen bg-slate-200 p-6 text-slate-900">
+    <main className="min-h-screen bg-slate-200 dark:bg-slate-900 p-6 text-slate-900 dark:text-slate-100 transition-colors">
       <div className="max-w-xl mx-auto">
         <h1 className="text-3xl font-bold text-center mb-2">
           🦵 Rehabilitación de Rodilla
         </h1>
         <p className="text-center mb-1 font-medium">Fecha: {today}</p>
-        <p className="text-center mb-4 text-slate-600">
+        <p className="text-center mb-4 text-slate-600 dark:text-slate-400">
           {dayName}{dayPlan ? ` — ${dayPlan.titulo}` : ""}
         </p>
 
@@ -128,16 +128,16 @@ export default function Home() {
             <span>Progreso de hoy</span>
             <span>{progress}%</span>
           </div>
-          <div className="w-full bg-slate-300 rounded-full h-4">
+          <div className="w-full bg-slate-300 dark:bg-slate-700 rounded-full h-4">
             <div
-              className="bg-blue-600 h-4 rounded-full transition-all"
+              className="bg-blue-600 dark:bg-blue-500 h-4 rounded-full transition-all"
               style={{ width: `${progress}%` }}
             ></div>
           </div>
         </div>
 
         {completedCount === 0 && totalExercises > 0 && (
-          <div className="mb-6 p-3 bg-red-100 border border-red-300 rounded-xl text-center font-semibold text-red-700">
+          <div className="mb-6 p-3 bg-red-100 dark:bg-red-950 border border-red-300 dark:border-red-800 rounded-xl text-center font-semibold text-red-700 dark:text-red-300">
             ⚠️ Aún no has hecho tus ejercicios hoy
           </div>
         )}
@@ -156,10 +156,10 @@ export default function Home() {
                     key={d.date}
                     className={`p-2 rounded-lg ${
                       d.expected > 0 && d.done === d.expected
-                        ? "bg-green-500 text-white"
+                        ? "bg-green-500 dark:bg-green-600 text-white"
                         : d.done > 0
-                        ? "bg-yellow-300"
-                        : "bg-slate-300"
+                        ? "bg-yellow-300 dark:bg-yellow-600 dark:text-slate-900"
+                        : "bg-slate-300 dark:bg-slate-700"
                     }`}
                   >
                     {new Date(d.date + "T12:00:00").getDate()}
@@ -174,13 +174,13 @@ export default function Home() {
           </>
         )}
 
-        <div className="mb-8 bg-white p-5 rounded-2xl shadow-md border border-slate-300">
+        <div className="mb-8 bg-white dark:bg-slate-800 p-5 rounded-2xl shadow-md border border-slate-300 dark:border-slate-700">
           <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
             💪 {dayName}{dayPlan ? ` — ${dayPlan.titulo}` : ""}
           </h2>
 
           {ejercicios.map((ex) => (
-            <div key={ex.name} className="mb-4 pb-4 border-b last:border-0 last:pb-0">
+            <div key={ex.name} className="mb-4 pb-4 border-b dark:border-slate-700 last:border-0 last:pb-0">
               <label className="flex items-start gap-3 cursor-pointer">
                 <input
                   type="checkbox"
@@ -191,7 +191,7 @@ export default function Home() {
                 <div className="flex-1">
                   <div className="font-medium">{ex.name}</div>
                   {ex.detail && (
-                    <div className="text-sm text-blue-600 font-mono mt-1">
+                    <div className="text-sm text-blue-600 dark:text-blue-400 font-mono mt-1">
                       {ex.detail}
                     </div>
                   )}
@@ -209,12 +209,12 @@ export default function Home() {
               setStreak(0);
             }
           }}
-          className="w-full mt-4 p-3 bg-red-100 border border-red-300 rounded-xl text-red-700 font-semibold text-sm"
+          className="w-full mt-4 p-3 bg-red-100 dark:bg-red-950 border border-red-300 dark:border-red-800 rounded-xl text-red-700 dark:text-red-300 font-semibold text-sm"
         >
           🗑️ Resetear toda la data
         </button>
 
-        <p className="text-center mt-10 text-sm text-slate-600 font-medium">
+        <p className="text-center mt-10 text-sm text-slate-600 dark:text-slate-400 font-medium">
           "Constancia diaria = rodilla que vuelve a moverse"
         </p>
       </div>
