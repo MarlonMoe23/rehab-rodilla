@@ -1,32 +1,74 @@
 {
-  "VMO Activation": [
-    { "name": "Contracción cuádriceps con toalla bajo talón 1", "tabata": "10s/3s/10/3", "note": "Acostado boca arriba, aprieta el cuadriceps,empuja rodilla hacia abajo" },
-    { "name": "Contracción cuádriceps con toalla bajo talón 2", "tabata": "10s/3s/10/3", "note": "Máxima contracción del cuádriceps" },
-    { "name": "Contracción cuádriceps con toalla bajo talón 3", "tabata": "10s/3s/10/2", "note": "Talón se levanta" }
-  ],
-  "Straight Leg Raise": [
-    { "name": "Elevación de pierna recta 1", "tabata": "3s/3s/12/3", "note": "Acostado boca arriba, Aprieta cuadriceps fuerte, bloquea rodilla antes de elevar, mantener recta lo más posible, levanta la pierna lentamente, baja lento" },
-    { "name": "Elevación de pierna recta 2", "tabata": "3s/3s/12/3", "note": "Si se dobla un poco está bien, pero intenta mejorar cada día" }
-  ],
-  "Terminal Knee Extension Static": [
-    { "name": "Extensión terminal con banda (estática) 1", "tabata": "5s/3s/15/3", "note": "Enderezar completamente la rodilla contra la banda y apretar cuádriceps" },
-    { "name": "Extensión terminal con banda (estática) 2", "tabata": "5s/3s/15/3", "note": "Extensión completa contra resistencia" }
-  ],
-  "Terminal Knee Extension Dynamic": [
-    { "name": "Extensión terminal con banda (dinámica) 1", "tabata": "1s/3s/15/3", "note": "Extender y regresar lento manteniendo control muscular" },
-    { "name": "Extensión terminal con banda (dinámica) 2", "tabata": "1s/3s/15/3", "note": "Movimiento controlado completo" }
-   
-  ],
-  "Weight Shift": [
-    { "name": "Transferencia de peso 1", "tabata": "5s/3s/15/3", "note": "Transferir peso a la pierna operada y activar cuádriceps" },
-    { "name": "Transferencia de peso 2", "tabata": "5s/3s/15/3", "note": "Esto enseña al cerebro a confiar en la pierna" }
-  ],
-"Single Leg Stance": [
-    { "name": "Apoyo unipodal con bloqueo 1", "tabata": "10s/5s/15/1", "note": "Parado solo en la pierna operada, bloquear rodilla con el cuádriceps" },
-    { "name": "Apoyo unipodal con bloqueo 2", "tabata": "10s/5s/10/1", "note": "Reforzar patrón neuromuscular" }
-  
-  ],
-  "Gait Training": [
-    { "name": "Caminata consciente", "tabata": "300s/0s/1/1", "note": "Aprieto el cuádriceps cuando el pie toca el piso" }
-  ]
+  "Lunes": {
+    "titulo": "Cuádriceps + glúteos",
+    "ejercicios": [
+      { "name": "Sentadilla", "detail": "3 × 10–12" },
+      { "name": "Step-up", "detail": "3 × 10 por pierna" },
+      { "name": "Hip thrust", "detail": "3 × 12" },
+      { "name": "Caminata lateral con banda", "detail": "3 × 15 pasos por lado" },
+      { "name": "Elevaciones de talón", "detail": "3 × 20" },
+      { "name": "Equilibrio a una pierna", "detail": "3 × 30–45 s" }
+    ]
+  },
+  "Martes": {
+    "titulo": "Isquiotibiales + cadera",
+    "ejercicios": [
+      { "name": "Peso muerto rumano", "detail": "3 × 10" },
+      { "name": "Curl femoral", "detail": "3 × 12" },
+      { "name": "Abducción de cadera con banda", "detail": "3 × 15" },
+      { "name": "Aducción con banda", "detail": "3 × 15" },
+      { "name": "Elevación de talón con rodillas flexionadas (sóleo)", "detail": "3 × 20" },
+      { "name": "Caminata", "detail": "20–30 minutos" }
+    ]
+  },
+  "Miércoles": {
+    "titulo": "Control funcional",
+    "ejercicios": [
+      { "name": "Split squat", "detail": "3 × 10 por pierna" },
+      { "name": "Step-down (bajar de un escalón)", "detail": "3 × 10" },
+      { "name": "Equilibrio a una pierna alcanzando diferentes direcciones", "detail": "3 series" },
+      { "name": "Puente a una pierna", "detail": "3 × 10" },
+      { "name": "Tibial anterior con banda o levantando la punta del pie", "detail": "3 × 15" }
+    ]
+  },
+  "Jueves": {
+    "titulo": "Recuperación activa",
+    "ejercicios": [
+      { "name": "Bicicleta estática", "detail": "30–40 minutos" },
+      { "name": "Movilidad de cadera y tobillo", "detail": "" },
+      { "name": "Estiramientos suaves", "detail": "" },
+      { "name": "Trabajo de equilibrio", "detail": "10–15 minutos" }
+    ]
+  },
+  "Viernes": {
+    "titulo": "Fuerza",
+    "ejercicios": [
+      { "name": "Sentadilla", "detail": "4 × 8–10" },
+      { "name": "Step-up con mayor altura o carga", "detail": "3 × 10" },
+      { "name": "Hip thrust", "detail": "4 × 10" },
+      { "name": "Curl femoral", "detail": "3 × 12" },
+      { "name": "Gemelos de pie", "detail": "4 × 15" },
+      { "name": "Sóleo", "detail": "3 × 20" }
+    ]
+  },
+  "Sábado": {
+    "titulo": "Estabilidad y coordinación",
+    "ejercicios": [
+      { "name": "Caminata lateral con banda", "detail": "3 × 15" },
+      { "name": "Monster walk", "detail": "3 × 15" },
+      { "name": "Equilibrio sobre superficie inestable (si ya es seguro)", "detail": "3 × 30 s" },
+      { "name": "Step-down", "detail": "3 × 10" },
+      { "name": "Elevaciones de talón a una pierna", "detail": "3 × 15" },
+      { "name": "Caminata", "detail": "30–40 minutos" }
+    ]
+  },
+  "Domingo": {
+    "titulo": "Descanso activo",
+    "ejercicios": [
+      { "name": "Caminata suave", "detail": "" },
+      { "name": "Movilidad", "detail": "" },
+      { "name": "Estiramientos", "detail": "" },
+      { "name": "Masaje o liberación miofascial si lo toleras", "detail": "" }
+    ]
+  }
 }
