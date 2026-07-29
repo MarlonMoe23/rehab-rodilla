@@ -1,15 +1,16 @@
 {
-  "Lunes": {
-    "titulo": "Cuádriceps + glúteos",
-    "ejercicios": [
-      { "name": "Sentadilla", "detail": "3 × 10–12" },
-      { "name": "Step-up", "detail": "3 × 10 por pierna" },
-      { "name": "Hip thrust", "detail": "3 × 12" },
-      { "name": "Caminata lateral con banda", "detail": "3 × 15 pasos por lado" },
-      { "name": "Elevaciones de talón", "detail": "3 × 20" },
-      { "name": "Equilibrio a una pierna", "detail": "3 × 30–45 s" }
-    ]
-  },
+"Lunes": {
+  "titulo": "Cuádriceps + glúteos",
+  "ejercicios": [
+    { "name": "Sentadilla", "detail": "3 × 10–12" },
+    { "name": "Peso muerto rumano", "detail": "2 × 12" },
+    { "name": "Hip thrust", "detail": "2 × 12" },
+    { "name": "Step-up", "detail": "3 × 10 por pierna" },
+    { "name": "Caminata lateral con banda", "detail": "3 × 15 pasos por lado" },
+    { "name": "Elevaciones de talón", "detail": "3 × 20" },
+    { "name": "Equilibrio a una pierna", "detail": "3 × 30–45 s" }
+  ]
+},
   "Martes": {
     "titulo": "Torso empuje (pecho, hombro, tríceps) + core",
     "ejercicios": [
@@ -33,13 +34,9 @@
     ]
   },
   "Jueves": {
-    "titulo": "Recuperación activa + tracción liviana",
+    "titulo": "Recuperación activa",
     "ejercicios": [
-      { "name": "Bicicleta estática", "detail": "30–40 minutos" },
       { "name": "Movilidad de cadera y tobillo", "detail": "" },
-      { "name": "Jalón al pecho en polea, agarre neutro", "detail": "2 × 12–15 (carga moderada-baja, sin llegar al fallo)" },
-      { "name": "Remo en polea baja sentado", "detail": "2 × 12–15 (carga moderada-baja, sin llegar al fallo)" },
-      { "name": "Curl de bíceps con mancuerna, sentado con respaldo", "detail": "2 × 12" },
       { "name": "Estiramientos suaves", "detail": "" },
       { "name": "Trabajo de equilibrio", "detail": "10–15 minutos" }
     ]
