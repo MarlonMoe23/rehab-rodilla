@@ -177,7 +177,7 @@ export default function Home() {
   const goToToday = () => setSelectedDate(today);
 
   return (
-    <main className="min-h-screen bg-slate-200 dark:bg-slate-900 p-6 text-slate-900 dark:text-slate-100 transition-colors">
+    <main className="min-h-screen bg-slate-200 dark:bg-slate-900 p-2 text-slate-900 dark:text-slate-100 transition-colors">
       <div className="max-w-xl mx-auto">
         <h1 className="text-3xl font-bold text-center mb-2">
           🦵 Rehabilitación de Rodilla
@@ -231,7 +231,7 @@ export default function Home() {
         </div>
 
         {completedCount === 0 && totalExercises > 0 && (
-          <div className="mb-6 p-3 bg-red-100 dark:bg-red-950 border border-red-300 dark:border-red-800 rounded-xl text-center font-semibold text-red-700 dark:text-red-300">
+          <div className="mb-6 p-2 bg-red-100 dark:bg-red-950 border border-red-300 dark:border-red-800 rounded-xl text-center font-semibold text-red-700 dark:text-red-300">
             ⚠️ Aún no has hecho tus ejercicios para este día
           </div>
         )}
@@ -268,7 +268,7 @@ export default function Home() {
           </>
         )}
 
-        <div className="mb-8 bg-white dark:bg-slate-800 p-5 rounded-2xl shadow-md border border-slate-300 dark:border-slate-700">
+        <div className="mb-8 bg-white dark:bg-slate-800 p-2 rounded-2xl shadow-md border border-slate-300 dark:border-slate-700">
           <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
             💪 {dayName}{dayPlan ? ` — ${dayPlan.titulo}` : ""}
           </h2>
@@ -330,7 +330,7 @@ export default function Home() {
               setSelectedDate(today);
             }
           }}
-          className="w-full mt-4 p-3 bg-red-100 dark:bg-red-950 border border-red-300 dark:border-red-800 rounded-xl text-red-700 dark:text-red-300 font-semibold text-sm"
+          className="w-full mt-4 p-2 bg-red-100 dark:bg-red-950 border border-red-300 dark:border-red-800 rounded-xl text-red-700 dark:text-red-300 font-semibold text-sm"
         >
           🗑️ Resetear toda la data
         </button>
