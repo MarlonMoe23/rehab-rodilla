@@ -236,14 +236,12 @@ export default function Home() {
           </div>
         )}
 
-        <div className="mb-6 text-center text-lg font-semibold">
-          🔥 Racha actual: {streak} día{streak !== 1 && "s"}
-        </div>
+        
 
         {mounted && (
           <>
             <div className="mb-8">
-              <h3 className="font-semibold mb-2">📅 Últimos 7 días (reales)</h3>
+              <h3 className="font-semibold mb-2">📅 Últimos 7 días</h3>
               <div className="grid grid-cols-7 gap-2 text-center text-sm">
                 {last7Days.map((d) => (
                   <div
@@ -262,9 +260,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mb-8 text-center font-medium">
-              📈 Cumplimiento últimos 7 días: {weeklyAverage}%
-            </div>
+            
           </>
         )}
 
@@ -320,24 +316,9 @@ export default function Home() {
           )}
         </div>
 
-        <button
-          onClick={() => {
-            if (confirm("¿Borrar toda la data guardada y empezar desde cero?")) {
-              localStorage.clear();
-              setChecks({});
-              setNotes({});
-              setStreak(0);
-              setSelectedDate(today);
-            }
-          }}
-          className="w-full mt-4 p-2 bg-red-100 dark:bg-red-950 border border-red-300 dark:border-red-800 rounded-xl text-red-700 dark:text-red-300 font-semibold text-sm"
-        >
-          🗑️ Resetear toda la data
-        </button>
+        
 
-        <p className="text-center mt-10 text-sm text-slate-600 dark:text-slate-400 font-medium">
-          "Constancia diaria = rodilla que vuelve a moverse"
-        </p>
+        
       </div>
     </main>
   );
