@@ -17,44 +17,56 @@ const getDayPlan = (dateStr) => {
   return exercisesData[dayName] || null;
 };
 
+// Suma/resta días a una fecha string YYYY-MM-DD
+const addDays = (dateStr, days) => {
+  const d = new Date(dateStr + "T12:00:00");
+  d.setDate(d.getDate() + days);
+  return d.toLocaleDateString('en-CA', { timeZone: 'America/Guayaquil' });
+};
+
 export default function Home() {
   const [today, setToday] = useState(getEcuadorDate);
+  const [selectedDate, setSelectedDate] = useState(getEcuadorDate);
   const [checks, setChecks] = useState({});
   const [streak, setStreak] = useState(0);
   const [mounted, setMounted] = useState(false);
 
-  const dayName = getDayName(today);
-  const dayPlan = getDayPlan(today);
+  const dayName = getDayName(selectedDate);
+  const dayPlan = getDayPlan(selectedDate);
   const ejercicios = dayPlan ? dayPlan.ejercicios : [];
   const totalExercises = ejercicios.length;
 
-  // Detectar cambio de día cada minuto
+  // Actualizar la fecha real cada minuto (para racha y semana)
   useEffect(() => {
     const interval = setInterval(() => {
-      const newDate = getEcuadorDate();
-      setToday((prev) => {
-        if (prev !== newDate) {
-          setChecks({});
-        }
-        return newDate;
-      });
+      setToday(getEcuadorDate());
     }, 60_000);
-
     return () => clearInterval(interval);
   }, []);
 
+  // Cargar checks al cambiar la fecha seleccionada
   useEffect(() => {
     setMounted(true);
-    const saved = localStorage.getItem(today);
-    if (saved) setChecks(JSON.parse(saved));
+    const saved = localStorage.getItem(selectedDate);
+    if (saved) {
+      setChecks(JSON.parse(saved));
+    } else {
+      setChecks({});
+    }
     updateStreak();
-  }, [today]);
+  }, [selectedDate]);
 
+  // Guardar checks cuando cambien (solo si mounted)
   useEffect(() => {
     if (!mounted) return;
-    localStorage.setItem(today, JSON.stringify(checks));
+    localStorage.setItem(selectedDate, JSON.stringify(checks));
     updateStreak();
-  }, [checks, mounted]);
+  }, [checks, selectedDate, mounted]);
+
+  // Recalcular racha cuando cambie el día real (today)
+  useEffect(() => {
+    updateStreak();
+  }, [today]);
 
   const toggleCheck = (exerciseName) => {
     setChecks((prev) => ({
@@ -70,7 +82,6 @@ export default function Home() {
 
   const updateStreak = () => {
     if (typeof window === "undefined") return;
-
     let count = 0;
     for (let i = 0; i < 365; i++) {
       const d = new Date();
@@ -111,15 +122,49 @@ export default function Home() {
     ? Math.round((weekTotals.done / weekTotals.expected) * 100)
     : 0;
 
+  // Navegación días
+  const goToPrevDay = () => setSelectedDate(addDays(selectedDate, -1));
+  const goToNextDay = () => setSelectedDate(addDays(selectedDate, 1));
+  const goToToday = () => setSelectedDate(today);
+
   return (
     <main className="min-h-screen bg-slate-200 dark:bg-slate-900 p-6 text-slate-900 dark:text-slate-100 transition-colors">
       <div className="max-w-xl mx-auto">
         <h1 className="text-3xl font-bold text-center mb-2">
           🦵 Rehabilitación de Rodilla
         </h1>
-        <p className="text-center mb-1 font-medium">Fecha: {today}</p>
+
+        {/* Selector de fecha */}
+        <div className="flex items-center justify-center gap-3 mb-4 flex-wrap">
+          <button
+            onClick={goToPrevDay}
+            className="px-3 py-1 bg-slate-300 dark:bg-slate-700 rounded-lg text-lg font-bold hover:bg-slate-400 dark:hover:bg-slate-600"
+          >
+            ◀
+          </button>
+          <input
+            type="date"
+            value={selectedDate}
+            onChange={(e) => setSelectedDate(e.target.value)}
+            className="px-3 py-1 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100"
+          />
+          <button
+            onClick={goToNextDay}
+            className="px-3 py-1 bg-slate-300 dark:bg-slate-700 rounded-lg text-lg font-bold hover:bg-slate-400 dark:hover:bg-slate-600"
+          >
+            ▶
+          </button>
+          <button
+            onClick={goToToday}
+            className="px-3 py-1 bg-blue-500 dark:bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-600 dark:hover:bg-blue-700 text-sm"
+          >
+            Hoy
+          </button>
+        </div>
+
+        <p className="text-center mb-1 font-medium">Fecha seleccionada: {selectedDate}</p>
         <p className="text-center mb-4 text-slate-600 dark:text-slate-400">
-          {dayName}{dayPlan ? ` — ${dayPlan.titulo}` : ""}
+          {dayName}{dayPlan ? ` — ${dayPlan.titulo}` : " (sin ejercicios)"}
         </p>
 
         {/* PROGRESO */}
@@ -138,7 +183,7 @@ export default function Home() {
 
         {completedCount === 0 && totalExercises > 0 && (
           <div className="mb-6 p-3 bg-red-100 dark:bg-red-950 border border-red-300 dark:border-red-800 rounded-xl text-center font-semibold text-red-700 dark:text-red-300">
-            ⚠️ Aún no has hecho tus ejercicios hoy
+            ⚠️ Aún no has hecho tus ejercicios para este día
           </div>
         )}
 
@@ -149,7 +194,7 @@ export default function Home() {
         {mounted && (
           <>
             <div className="mb-8">
-              <h3 className="font-semibold mb-2">📅 Últimos 7 días</h3>
+              <h3 className="font-semibold mb-2">📅 Últimos 7 días (reales)</h3>
               <div className="grid grid-cols-7 gap-2 text-center text-sm">
                 {last7Days.map((d) => (
                   <div
@@ -179,26 +224,32 @@ export default function Home() {
             💪 {dayName}{dayPlan ? ` — ${dayPlan.titulo}` : ""}
           </h2>
 
-          {ejercicios.map((ex) => (
-            <div key={ex.name} className="mb-4 pb-4 border-b dark:border-slate-700 last:border-0 last:pb-0">
-              <label className="flex items-start gap-3 cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={checks?.[ex.name] || false}
-                  onChange={() => toggleCheck(ex.name)}
-                  className="w-5 h-5 accent-blue-600 mt-0.5 flex-shrink-0"
-                />
-                <div className="flex-1">
-                  <div className="font-medium">{ex.name}</div>
-                  {ex.detail && (
-                    <div className="text-sm text-blue-600 dark:text-blue-400 font-mono mt-1">
-                      {ex.detail}
-                    </div>
-                  )}
-                </div>
-              </label>
-            </div>
-          ))}
+          {ejercicios.length === 0 ? (
+            <p className="text-slate-500 dark:text-slate-400">
+              No hay ejercicios programados para esta fecha.
+            </p>
+          ) : (
+            ejercicios.map((ex) => (
+              <div key={ex.name} className="mb-4 pb-4 border-b dark:border-slate-700 last:border-0 last:pb-0">
+                <label className="flex items-start gap-3 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={checks?.[ex.name] || false}
+                    onChange={() => toggleCheck(ex.name)}
+                    className="w-5 h-5 accent-blue-600 mt-0.5 flex-shrink-0"
+                  />
+                  <div className="flex-1">
+                    <div className="font-medium">{ex.name}</div>
+                    {ex.detail && (
+                      <div className="text-sm text-blue-600 dark:text-blue-400 font-mono mt-1">
+                        {ex.detail}
+                      </div>
+                    )}
+                  </div>
+                </label>
+              </div>
+            ))
+          )}
         </div>
 
         <button
@@ -207,6 +258,7 @@ export default function Home() {
               localStorage.clear();
               setChecks({});
               setStreak(0);
+              setSelectedDate(today);
             }
           }}
           className="w-full mt-4 p-3 bg-red-100 dark:bg-red-950 border border-red-300 dark:border-red-800 rounded-xl text-red-700 dark:text-red-300 font-semibold text-sm"

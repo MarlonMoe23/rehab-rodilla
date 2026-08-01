@@ -1,16 +1,16 @@
 {
-"Lunes": {
-  "titulo": "Cuádriceps + glúteos",
-  "ejercicios": [
-    { "name": "Sentadilla", "detail": "3 × 10–12" },
-    { "name": "Peso muerto rumano", "detail": "2 × 12" },
-    { "name": "Hip thrust", "detail": "2 × 12" },
-    { "name": "Step-up", "detail": "3 × 10 por pierna" },
-    { "name": "Caminata lateral con banda", "detail": "3 × 15 pasos por lado" },
-    { "name": "Elevaciones de talón", "detail": "3 × 20" },
-    { "name": "Equilibrio a una pierna", "detail": "3 × 30–45 s" }
-  ]
-},
+  "Lunes": {
+    "titulo": "Cuádriceps + glúteos",
+    "ejercicios": [
+      { "name": "Sentadilla", "detail": "3 × 10–12" },
+      { "name": "Peso muerto rumano", "detail": "2 × 12" },
+      { "name": "Hip thrust", "detail": "2 × 12" },
+      { "name": "Step-up", "detail": "3 × 10 por pierna" },
+      { "name": "Caminata lateral con banda", "detail": "3 × 15 pasos por lado" },
+      { "name": "Elevaciones de talón", "detail": "3 × 20" },
+      { "name": "Equilibrio a una pierna", "detail": "3 × 30–45 s" }
+    ]
+  },
   "Martes": {
     "titulo": "Torso empuje (pecho, hombro, tríceps) + core",
     "ejercicios": [
@@ -34,11 +34,14 @@
     ]
   },
   "Jueves": {
-    "titulo": "Recuperación activa",
+    "titulo": "Torso tracción (espalda, bíceps) + core",
     "ejercicios": [
-      { "name": "Movilidad de cadera y tobillo", "detail": "" },
-      { "name": "Estiramientos suaves", "detail": "" },
-      { "name": "Trabajo de equilibrio", "detail": "10–15 minutos" }
+      { "name": "Jalón al pecho en polea, agarre ancho", "detail": "3 × 10–12" },
+      { "name": "Remo en máquina sentado (respaldo en el pecho)", "detail": "3 × 10–12" },
+      { "name": "Remo en polea baja sentado", "detail": "3 × 12" },
+      { "name": "Curl de bíceps con barra o mancuerna", "detail": "3 × 12" },
+      { "name": "Face pull en polea", "detail": "3 × 15" },
+      { "name": "Plancha lateral", "detail": "2 × 20–30 s por lado" }
     ]
   },
   "Viernes": {
@@ -54,18 +57,15 @@
     ]
   },
   "Sábado": {
-    "titulo": "Torso tracción (espalda, bíceps) + core",
+    "titulo": "Descanso activo",
     "ejercicios": [
-      { "name": "Jalón al pecho en polea, agarre ancho", "detail": "3 × 10–12" },
-      { "name": "Remo en máquina sentado (respaldo en el pecho)", "detail": "3 × 10–12" },
-      { "name": "Remo en polea baja sentado", "detail": "3 × 12" },
-      { "name": "Curl de bíceps con barra o mancuerna", "detail": "3 × 12" },
-      { "name": "Face pull en polea", "detail": "3 × 15" },
-      { "name": "Plancha lateral", "detail": "2 × 20–30 s por lado" }
+      { "name": "Movilidad de cadera y tobillo", "detail": "" },
+      { "name": "Estiramientos suaves", "detail": "" },
+      { "name": "Trabajo de equilibrio (opcional)", "detail": "10–15 minutos" }
     ]
   },
   "Domingo": {
-    "titulo": "Descanso activo",
+    "titulo": "Descanso",
     "ejercicios": [
       { "name": "Caminata suave", "detail": "" },
       { "name": "Movilidad", "detail": "" },
@@ -74,3 +74,5 @@
     ]
   }
 }
+
+Si prefieres que el día de descanso "duro" quede el sábado (para tener el domingo con algo de movilidad) o que el jueves sea el de descanso activo en vez de tracción, dime y lo reordeno.

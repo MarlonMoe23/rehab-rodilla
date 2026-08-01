@@ -24,10 +24,42 @@ const addDays = (dateStr, days) => {
   return d.toLocaleDateString('en-CA', { timeZone: 'America/Guayaquil' });
 };
 
+// --- Utilidades de notas de progresión ---
+// Cada ejercicio guarda su historial en localStorage bajo la clave `notas_${nombre}`
+// Estructura: { "2026-08-01": "5kg, buena forma", "2026-07-28": "4kg" }
+
+const getNotesHistory = (exerciseName) => {
+  if (typeof window === "undefined") return {};
+  const raw = localStorage.getItem(`notas_${exerciseName}`);
+  return raw ? JSON.parse(raw) : {};
+};
+
+const saveNote = (exerciseName, dateStr, text) => {
+  const history = getNotesHistory(exerciseName);
+  if (text.trim() === "") {
+    delete history[dateStr];
+  } else {
+    history[dateStr] = text;
+  }
+  localStorage.setItem(`notas_${exerciseName}`, JSON.stringify(history));
+};
+
+// Busca la nota más reciente ANTERIOR (o igual) a una fecha dada
+const getLastNoteBefore = (exerciseName, dateStr) => {
+  const history = getNotesHistory(exerciseName);
+  const dates = Object.keys(history)
+    .filter((d) => d < dateStr)
+    .sort()
+    .reverse();
+  if (dates.length === 0) return null;
+  return { date: dates[0], text: history[dates[0]] };
+};
+
 export default function Home() {
   const [today, setToday] = useState(getEcuadorDate);
   const [selectedDate, setSelectedDate] = useState(getEcuadorDate);
   const [checks, setChecks] = useState({});
+  const [notes, setNotes] = useState({}); // notas del día seleccionado, por ejercicio
   const [streak, setStreak] = useState(0);
   const [mounted, setMounted] = useState(false);
 
@@ -44,7 +76,7 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  // Cargar checks al cambiar la fecha seleccionada
+  // Cargar checks y notas al cambiar la fecha seleccionada
   useEffect(() => {
     setMounted(true);
     const saved = localStorage.getItem(selectedDate);
@@ -53,6 +85,18 @@ export default function Home() {
     } else {
       setChecks({});
     }
+
+    // Cargar la nota de CADA ejercicio para el día seleccionado (si existe)
+    const plan = getDayPlan(selectedDate);
+    const loadedNotes = {};
+    if (plan) {
+      plan.ejercicios.forEach((ex) => {
+        const history = getNotesHistory(ex.name);
+        loadedNotes[ex.name] = history[selectedDate] || "";
+      });
+    }
+    setNotes(loadedNotes);
+
     updateStreak();
   }, [selectedDate]);
 
@@ -73,6 +117,11 @@ export default function Home() {
       ...prev,
       [exerciseName]: !prev?.[exerciseName],
     }));
+  };
+
+  const handleNoteChange = (exerciseName, text) => {
+    setNotes((prev) => ({ ...prev, [exerciseName]: text }));
+    saveNote(exerciseName, selectedDate, text);
   };
 
   const completedCount = Object.values(checks).filter(Boolean).length;
@@ -229,26 +278,45 @@ export default function Home() {
               No hay ejercicios programados para esta fecha.
             </p>
           ) : (
-            ejercicios.map((ex) => (
-              <div key={ex.name} className="mb-4 pb-4 border-b dark:border-slate-700 last:border-0 last:pb-0">
-                <label className="flex items-start gap-3 cursor-pointer">
+            ejercicios.map((ex) => {
+              const lastNote = mounted ? getLastNoteBefore(ex.name, selectedDate) : null;
+              return (
+                <div key={ex.name} className="mb-4 pb-4 border-b dark:border-slate-700 last:border-0 last:pb-0">
+                  <label className="flex items-start gap-3 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={checks?.[ex.name] || false}
+                      onChange={() => toggleCheck(ex.name)}
+                      className="w-5 h-5 accent-blue-600 mt-0.5 flex-shrink-0"
+                    />
+                    <div className="flex-1">
+                      <div className="font-medium">{ex.name}</div>
+                      {ex.detail && (
+                        <div className="text-sm text-blue-600 dark:text-blue-400 font-mono mt-1">
+                          {ex.detail}
+                        </div>
+                      )}
+                    </div>
+                  </label>
+
+                  {/* Recordatorio de la última nota registrada */}
+                  {lastNote && (
+                    <div className="mt-2 ml-8 text-xs text-slate-500 dark:text-slate-400 italic">
+                      Última vez ({lastNote.date}): {lastNote.text}
+                    </div>
+                  )}
+
+                  {/* Cajón de nota para el día seleccionado */}
                   <input
-                    type="checkbox"
-                    checked={checks?.[ex.name] || false}
-                    onChange={() => toggleCheck(ex.name)}
-                    className="w-5 h-5 accent-blue-600 mt-0.5 flex-shrink-0"
+                    type="text"
+                    placeholder="Nota (peso, sensación, dolor...)"
+                    value={notes?.[ex.name] || ""}
+                    onChange={(e) => handleNoteChange(ex.name, e.target.value)}
+                    className="mt-2 ml-8 w-[calc(100%-2rem)] px-3 py-1.5 text-sm rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 text-slate-900 dark:text-slate-100"
                   />
-                  <div className="flex-1">
-                    <div className="font-medium">{ex.name}</div>
-                    {ex.detail && (
-                      <div className="text-sm text-blue-600 dark:text-blue-400 font-mono mt-1">
-                        {ex.detail}
-                      </div>
-                    )}
-                  </div>
-                </label>
-              </div>
-            ))
+                </div>
+              );
+            })
           )}
         </div>
 
@@ -257,6 +325,7 @@ export default function Home() {
             if (confirm("¿Borrar toda la data guardada y empezar desde cero?")) {
               localStorage.clear();
               setChecks({});
+              setNotes({});
               setStreak(0);
               setSelectedDate(today);
             }
