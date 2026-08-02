@@ -25,17 +25,13 @@ const addDays = (dateStr, days) => {
 };
 
 // Cuenta cuántos ejercicios del plan ACTUAL están marcados como hechos.
-// Ignora checks "huérfanos" que quedaron guardados de un plan anterior
-// (ej: cuando cambiaste el número de ejercicios de un día).
+// Ignora checks "huérfanos" que quedaron guardados de un plan anterior.
 const countDoneForPlan = (data, plan) => {
   if (!plan) return 0;
   return plan.ejercicios.filter((ex) => data?.[ex.name]).length;
 };
 
 // --- Utilidades de notas de progresión ---
-// Cada ejercicio guarda su historial en localStorage bajo la clave `notas_${nombre}`
-// Estructura: { "2026-08-01": "5kg, buena forma", "2026-07-28": "4kg" }
-
 const getNotesHistory = (exerciseName) => {
   if (typeof window === "undefined") return {};
   const raw = localStorage.getItem(`notas_${exerciseName}`);
@@ -52,7 +48,6 @@ const saveNote = (exerciseName, dateStr, text) => {
   localStorage.setItem(`notas_${exerciseName}`, JSON.stringify(history));
 };
 
-// Busca la nota más reciente ANTERIOR (o igual) a una fecha dada
 const getLastNoteBefore = (exerciseName, dateStr) => {
   const history = getNotesHistory(exerciseName);
   const dates = Object.keys(history)
@@ -67,16 +62,16 @@ export default function Home() {
   const [today, setToday] = useState(getEcuadorDate);
   const [selectedDate, setSelectedDate] = useState(getEcuadorDate);
   const [checks, setChecks] = useState({});
-  const [notes, setNotes] = useState({}); // notas del día seleccionado, por ejercicio
+  const [notes, setNotes] = useState({});
   const [streak, setStreak] = useState(0);
   const [mounted, setMounted] = useState(false);
+  const [refreshTick, setRefreshTick] = useState(0); // fuerza refresco de últimos 7 días tras guardar
 
   const dayName = getDayName(selectedDate);
   const dayPlan = getDayPlan(selectedDate);
   const ejercicios = dayPlan ? dayPlan.ejercicios : [];
   const totalExercises = ejercicios.length;
 
-  // Actualizar la fecha real cada minuto (para racha y semana)
   useEffect(() => {
     const interval = setInterval(() => {
       setToday(getEcuadorDate());
@@ -94,7 +89,6 @@ export default function Home() {
       setChecks({});
     }
 
-    // Cargar la nota de CADA ejercicio para el día seleccionado (si existe)
     const plan = getDayPlan(selectedDate);
     const loadedNotes = {};
     if (plan) {
@@ -113,9 +107,9 @@ export default function Home() {
     if (!mounted) return;
     localStorage.setItem(selectedDate, JSON.stringify(checks));
     updateStreak();
+    setRefreshTick((t) => t + 1); // asegura que "Últimos 7 días" se recalcule ya con el dato guardado
   }, [checks, selectedDate, mounted]);
 
-  // Recalcular racha cuando cambie el día real (today)
   useEffect(() => {
     updateStreak();
   }, [today]);
@@ -132,7 +126,8 @@ export default function Home() {
     saveNote(exerciseName, selectedDate, text);
   };
 
-  // Solo cuenta los ejercicios que EXISTEN en el plan actual del día
+  // Usa siempre el estado en memoria (checks) como fuente de verdad para el día
+  // seleccionado — nunca localStorage directo, para evitar datos desactualizados.
   const completedCount = countDoneForPlan(checks, dayPlan);
   const progress = totalExercises > 0
     ? Math.round((completedCount / totalExercises) * 100)
@@ -149,7 +144,7 @@ export default function Home() {
       if (!plan) break;
 
       const expected = plan.ejercicios.length;
-      const data = JSON.parse(localStorage.getItem(key) || "{}");
+      const data = key === selectedDate ? checks : JSON.parse(localStorage.getItem(key) || "{}");
       const done = countDoneForPlan(data, plan);
 
       if (expected > 0 && done === expected) count++;
@@ -158,6 +153,8 @@ export default function Home() {
     setStreak(count);
   };
 
+  // Para el día SELECCIONADO usamos el estado `checks` en memoria (siempre al día).
+  // Para los otros 6 días usamos localStorage (no están siendo editados ahora).
   const last7Days = mounted
     ? Array.from({ length: 7 }).map((_, i) => {
         const d = new Date();
@@ -165,7 +162,7 @@ export default function Home() {
         const key = d.toLocaleDateString('en-CA', { timeZone: 'America/Guayaquil' });
         const plan = getDayPlan(key);
         const expected = plan ? plan.ejercicios.length : 0;
-        const data = JSON.parse(localStorage.getItem(key) || "{}");
+        const data = key === selectedDate ? checks : JSON.parse(localStorage.getItem(key) || "{}");
         const done = countDoneForPlan(data, plan);
         return { date: key, done, expected };
       })
@@ -180,7 +177,6 @@ export default function Home() {
     ? Math.round((weekTotals.done / weekTotals.expected) * 100)
     : 0;
 
-  // Navegación días
   const goToPrevDay = () => setSelectedDate(addDays(selectedDate, -1));
   const goToNextDay = () => setSelectedDate(addDays(selectedDate, 1));
   const goToToday = () => setSelectedDate(today);
@@ -192,7 +188,6 @@ export default function Home() {
           🦵 Rehabilitación de Rodilla
         </h1>
 
-        {/* Selector de fecha */}
         <div className="flex items-center justify-center gap-3 mb-4 flex-wrap">
           <button
             onClick={goToPrevDay}
@@ -225,7 +220,6 @@ export default function Home() {
           {dayName}{dayPlan ? ` — ${dayPlan.titulo}` : " (sin ejercicios)"}
         </p>
 
-        {/* PROGRESO */}
         <div className="mb-6">
           <div className="flex justify-between mb-1 font-medium">
             <span>Progreso de hoy</span>
@@ -246,27 +240,25 @@ export default function Home() {
         )}
 
         {mounted && (
-          <>
-            <div className="mb-8">
-              <h3 className="font-semibold mb-2">📅 Últimos 7 días</h3>
-              <div className="grid grid-cols-7 gap-2 text-center text-sm">
-                {last7Days.map((d) => (
-                  <div
-                    key={d.date}
-                    className={`p-2 rounded-lg ${
-                      d.expected > 0 && d.done === d.expected
-                        ? "bg-green-500 dark:bg-green-600 text-white"
-                        : d.done > 0
-                        ? "bg-yellow-300 dark:bg-yellow-600 dark:text-slate-900"
-                        : "bg-slate-300 dark:bg-slate-700"
-                    }`}
-                  >
-                    {new Date(d.date + "T12:00:00").getDate()}
-                  </div>
-                ))}
-              </div>
+          <div className="mb-8">
+            <h3 className="font-semibold mb-2">📅 Últimos 7 días</h3>
+            <div className="grid grid-cols-7 gap-2 text-center text-sm">
+              {last7Days.map((d) => (
+                <div
+                  key={d.date}
+                  className={`p-2 rounded-lg ${
+                    d.expected > 0 && d.done === d.expected
+                      ? "bg-green-500 dark:bg-green-600 text-white"
+                      : d.done > 0
+                      ? "bg-yellow-300 dark:bg-yellow-600 dark:text-slate-900"
+                      : "bg-slate-300 dark:bg-slate-700"
+                  }`}
+                >
+                  {new Date(d.date + "T12:00:00").getDate()}
+                </div>
+              ))}
             </div>
-          </>
+          </div>
         )}
 
         <div className="mb-8 bg-white dark:bg-slate-800 p-2 rounded-2xl shadow-md border border-slate-300 dark:border-slate-700">
@@ -300,14 +292,12 @@ export default function Home() {
                     </div>
                   </label>
 
-                  {/* Recordatorio de la última nota registrada */}
                   {lastNote && (
                     <div className="mt-2 ml-8 text-xs text-slate-500 dark:text-slate-400 italic">
                       Última vez ({lastNote.date}): {lastNote.text}
                     </div>
                   )}
 
-                  {/* Cajón de nota para el día seleccionado */}
                   <input
                     type="text"
                     placeholder="Nota (peso, sensación, dolor...)"
