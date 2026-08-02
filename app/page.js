@@ -24,6 +24,14 @@ const addDays = (dateStr, days) => {
   return d.toLocaleDateString('en-CA', { timeZone: 'America/Guayaquil' });
 };
 
+// Cuenta cuántos ejercicios del plan ACTUAL están marcados como hechos.
+// Ignora checks "huérfanos" que quedaron guardados de un plan anterior
+// (ej: cuando cambiaste el número de ejercicios de un día).
+const countDoneForPlan = (data, plan) => {
+  if (!plan) return 0;
+  return plan.ejercicios.filter((ex) => data?.[ex.name]).length;
+};
+
 // --- Utilidades de notas de progresión ---
 // Cada ejercicio guarda su historial en localStorage bajo la clave `notas_${nombre}`
 // Estructura: { "2026-08-01": "5kg, buena forma", "2026-07-28": "4kg" }
@@ -124,7 +132,8 @@ export default function Home() {
     saveNote(exerciseName, selectedDate, text);
   };
 
-  const completedCount = Object.values(checks).filter(Boolean).length;
+  // Solo cuenta los ejercicios que EXISTEN en el plan actual del día
+  const completedCount = countDoneForPlan(checks, dayPlan);
   const progress = totalExercises > 0
     ? Math.round((completedCount / totalExercises) * 100)
     : 0;
@@ -141,7 +150,7 @@ export default function Home() {
 
       const expected = plan.ejercicios.length;
       const data = JSON.parse(localStorage.getItem(key) || "{}");
-      const done = Object.values(data).filter(Boolean).length;
+      const done = countDoneForPlan(data, plan);
 
       if (expected > 0 && done === expected) count++;
       else break;
@@ -157,7 +166,7 @@ export default function Home() {
         const plan = getDayPlan(key);
         const expected = plan ? plan.ejercicios.length : 0;
         const data = JSON.parse(localStorage.getItem(key) || "{}");
-        const done = Object.values(data).filter(Boolean).length;
+        const done = countDoneForPlan(data, plan);
         return { date: key, done, expected };
       })
     : [];
@@ -236,8 +245,6 @@ export default function Home() {
           </div>
         )}
 
-        
-
         {mounted && (
           <>
             <div className="mb-8">
@@ -259,8 +266,6 @@ export default function Home() {
                 ))}
               </div>
             </div>
-
-            
           </>
         )}
 
@@ -315,10 +320,6 @@ export default function Home() {
             })
           )}
         </div>
-
-        
-
-        
       </div>
     </main>
   );
