@@ -1,0 +1,80 @@
+{
+  "Lunes": {
+    "titulo": "Cuádriceps + glúteos",
+    "ejercicios": [
+      { "name": "Sentadilla", "detail": "3 × 12" },
+      { "name": "Pararse en una pierna", "detail": "3 × 12" },
+      { "name": "Step-up", "detail": "3 × 12" },
+      { "name": "Extensión de pierna en máquina", "detail": "3 × 12" },
+      { "name": "Curl femoral en máquina", "detail": "3 × 12" },
+      { "name": "Elevaciones de talón", "detail": "3 × 20" },
+      { "name": "Equilibrio a una pierna", "detail": "3 × 45s" }
+    ]
+  },
+  "Martes": {
+    "titulo": "Torso empuje (pecho, hombro, tríceps) + core",
+    "ejercicios": [
+      { "name": "Press de banca en máquina o banco (pies apoyados, sin impulso de pierna)", "detail": "3 × 10–12" },
+      { "name": "Press de hombro en máquina o sentado con respaldo", "detail": "3 × 10–12" },
+      { "name": "Aperturas en polea o pec deck", "detail": "3 × 12–15" },
+      { "name": "Extensión de tríceps en polea", "detail": "3 × 12–15" },
+      { "name": "Fondos asistidos en máquina o extensión de tríceps con mancuerna sentado", "detail": "3 × 10–12" },
+      { "name": "Plancha frontal", "detail": "3 × 30–40 s" }
+    ]
+  },
+  "Miércoles": {
+    "titulo": "Control funcional",
+    "ejercicios": [
+      { "name": "Caminata lateral con banda", "detail": "3 × 12 pasos por lado" },
+      { "name": "Peso muerto rumano", "detail": "3 × 12" },
+      { "name": "Split squat", "detail": "3 × 12" },
+      { "name": "Step-down", "detail": "3 × 12" },
+      { "name": "Clamshell con banda", "detail": "3 × 12" },
+      { "name": "Puente a una pierna", "detail": "3 × 12" },
+      { "name": "Equilibrio a una pierna alcanzando diferentes direcciones", "detail": "3 × 45s" },
+      { "name": "Tibial anterior levantando la punta del pie", "detail": "3 × 15" }
+    ]
+  },
+  "Jueves": {
+    "titulo": "Torso tracción (espalda, bíceps) + core",
+    "ejercicios": [
+      { "name": "Jalón al pecho en polea, agarre ancho", "detail": "3 × 10–12" },
+      { "name": "Remo en máquina sentado (respaldo en el pecho)", "detail": "3 × 10–12" },
+      { "name": "Remo en polea baja sentado", "detail": "3 × 12" },
+      { "name": "Curl de bíceps con barra o mancuerna", "detail": "3 × 12" },
+      { "name": "Face pull en polea", "detail": "3 × 15" },
+      { "name": "Plancha lateral", "detail": "2 × 20–30 s por lado" }
+    ]
+  },
+  "Viernes": {
+    "titulo": "Fuerza",
+    "ejercicios": [
+      { "name": "Sentadilla bulgara", "detail": "4 × 12" },
+      { "name": "Extensión de pierna en máquina", "detail": "3 × 12" },
+      { "name": "Step-up", "detail": "3 × 12" },
+      { "name": "Hip thrust", "detail": "3 × 12" },
+      { "name": "Curl femoral", "detail": "3 × 12" },
+      { "name": "Gemelos de pie", "detail": "4 × 15" },
+      { "name": "Sóleo", "detail": "3 × 20" }
+    ]
+  },
+  "Sábado": {
+    "titulo": "Descanso activo",
+    "ejercicios": [
+      { "name": "Movilidad de cadera y tobillo", "detail": "" },
+      { "name": "Estiramientos suaves", "detail": "" },
+      { "name": "Trabajo de equilibrio (opcional)", "detail": "10–15 minutos" }
+    ]
+  },
+  "Domingo": {
+    "titulo": "Descanso",
+    "ejercicios": [
+      { "name": "Caminata suave", "detail": "" },
+      { "name": "Movilidad", "detail": "" },
+      { "name": "Estiramientos", "detail": "" },
+      { "name": "Masaje o liberación miofascial si lo toleras", "detail": "" }
+    ]
+  }
+}
+
+Si prefieres que el día de descanso "duro" quede el sábado (para tener el domingo con algo de movilidad) o que el jueves sea el de descanso activo en vez de tracción, dime y lo reordeno.
