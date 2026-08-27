@@ -11,13 +11,12 @@
     ]
   },
   "Martes": {
-    "titulo": "Torso empuje — Pecho + hombro + tríceps + core",
+    "titulo": "Torso empuje + core",
     "ejercicios": [
-      { "name": "Press de banca en máquina o banco", "detail": "3 × 8–10" },
-      { "name": "Press de hombro en máquina o sentado con respaldo", "detail": "3 × 8–10" },
-      { "name": "Aperturas en polea o pec deck", "detail": "2 × 12" },
+      { "name": "Press de banca en banco", "detail": "3 × 6–10" },
+      { "name": "Press de hombro sentado con respaldo", "detail": "3 × 8–10" },
+      { "name": "Aperturas en pec deck o polea", "detail": "2 × 10–15" },
       { "name": "Extensión de tríceps en polea", "detail": "3 × 10–12" },
-      { "name": "Fondos asistidos en máquina", "detail": "2 × 10–12" },
       { "name": "Plancha frontal", "detail": "3 × 30–45 s" }
     ]
   },
@@ -33,14 +32,13 @@
     ]
   },
   "Jueves": {
-    "titulo": "Torso tracción — Espalda + bíceps + core",
+    "titulo": "Torso tracción + core",
     "ejercicios": [
-      { "name": "Jalón al pecho en polea, agarre ancho", "detail": "3 × 8–10" },
+      { "name": "Jalón al pecho en polea", "detail": "3 × 6–10" },
       { "name": "Remo en máquina con pecho apoyado", "detail": "3 × 8–10" },
-      { "name": "Remo en polea baja sentado", "detail": "2 × 10–12" },
-      { "name": "Curl de bíceps con barra o mancuerna", "detail": "3 × 10–12" },
+      { "name": "Curl de bíceps con barra o mancuerna", "detail": "3 × 8–12" },
       { "name": "Face pull en polea", "detail": "2 × 12–15" },
-      { "name": "Plancha lateral", "detail": "2 × 30 s por lado" }
+      { "name": "Plancha lateral", "detail": "2 × 30–45 s por lado" }
     ]
   },
   "Viernes": {
@@ -59,16 +57,13 @@
     "ejercicios": [
       { "name": "Movilidad de tobillo", "detail": "" },
       { "name": "Movilidad de cadera", "detail": "" },
-      { "name": "Estiramientos suaves", "detail": "" },
-      { "name": "Caminata tranquila", "detail": "" },
-      { "name": "Equilibrio a una pierna", "detail": "5–10 min opcional" }
+      { "name": "Equilibrio a una pierna", "detail": "2 × 30–45 s" }
     ]
   },
   "Domingo": {
     "titulo": "Descanso",
     "ejercicios": [
-      { "name": "Caminata suave", "detail": "" },
-      { "name": "Movilidad", "detail": "" }
+      { "name": "Caminata", "detail": "" },
     ]
   }
 }
