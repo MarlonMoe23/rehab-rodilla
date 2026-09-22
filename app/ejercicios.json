@@ -1,61 +1,38 @@
 {
   "Lunes": {
-    "titulo": "Fuerza — Cuerpo completo",
+    "titulo": "Sentadilla + empuje horizontal (fuerza e hipertrofia)",
     "ejercicios": [
-      { "name": "Sentadilla", "detail": "3 × 5–6 · RIR 2" },
-      { "name": "Press de banca", "detail": "3 × 5–6 · RIR 2" },
-      { "name": "Remo con barra o máquina", "detail": "3 × 5–6 · RIR 2" },
-      { "name": "Peso muerto rumano", "detail": "3 × 6–8 · RIR 2" },
-      { "name": "Press de hombros", "detail": "2 × 6–8 · RIR 2" },
-      { "name": "Elevación de talones", "detail": "3 × 10–15 · RIR 1–2" },
-      { "name": "Plancha frontal", "detail": "3 × 30–60 s" }
+      { "name": "Bicicleta estática (calentamiento)", "detail": "8-10 min" },
+      { "name": "Sentadilla trasera (back squat)", "detail": "3 × 4-6 (≥80% 1RM)" },
+      { "name": "Press banca plano", "detail": "3 × 6-8 (75-80% 1RM)" },
+      { "name": "Peso muerto rumano", "detail": "3 × 10-12 (60-70% 1RM)" },
+      { "name": "Remo con mancuerna o polea", "detail": "3 × 10-12" },
+      { "name": "Elevaciones laterales", "detail": "3 × 12-15" },
+      { "name": "Plancha", "detail": "3 × 30-45s" }
     ]
-  },
-  "Martes": {
-    "titulo": "Descanso",
-    "ejercicios": []
   },
   "Miércoles": {
-    "titulo": "Hipertrofia — Cuerpo completo",
+    "titulo": "Peso muerto + tracción (fuerza e hipertrofia)",
     "ejercicios": [
-      { "name": "Prensa de piernas", "detail": "3 × 8–12 · RIR 1–2" },
-      { "name": "Press inclinado con mancuernas", "detail": "3 × 8–12 · RIR 1–2" },
-      { "name": "Jalón al pecho", "detail": "3 × 8–12 · RIR 1–2" },
-      { "name": "Remo sentado en polea", "detail": "3 × 8–12 · RIR 1–2" },
-      { "name": "Elevaciones laterales", "detail": "3 × 10–15 · RIR 1–2" },
-      { "name": "Curl de bíceps", "detail": "2 × 10–15 · RIR 1–2" },
-      { "name": "Extensión de tríceps en polea", "detail": "2 × 10–15 · RIR 1–2" },
-      { "name": "Curl femoral", "detail": "3 × 10–15 · RIR 1–2" }
+      { "name": "Bicicleta estática (calentamiento)", "detail": "8-10 min" },
+      { "name": "Peso muerto convencional o sumo", "detail": "3 × 4-6 (≥80% 1RM)" },
+      { "name": "Dominadas o jalón al pecho", "detail": "3 × 6-10" },
+      { "name": "Prensa de piernas o zancadas", "detail": "3 × 10-12 (60-75% 1RM)" },
+      { "name": "Press militar con mancuernas", "detail": "3 × 10-12" },
+      { "name": "Curl femoral o hip thrust", "detail": "3 × 12-15" },
+      { "name": "Dead bug o rueda abdominal", "detail": "3 × 10-12" }
     ]
-  },
-  "Jueves": {
-    "titulo": "Descanso",
-    "ejercicios": []
   },
   "Viernes": {
-    "titulo": "Potencia + fuerza — Cuerpo completo",
+    "titulo": "Potencia + empuje vertical",
     "ejercicios": [
-      { "name": "Sentadilla con carga moderada y subida explosiva", "detail": "3 × 5 · 30–70% 1RM" },
-      { "name": "Press de banca con carga moderada y ejecución explosiva", "detail": "3 × 5 · 30–70% 1RM" },
-      { "name": "Hip thrust", "detail": "3 × 8–10 · RIR 2" },
-      { "name": "Dominadas o jalón al pecho", "detail": "3 × 8–10 · RIR 1–2" },
-      { "name": "Zancadas o split squat", "detail": "3 × 8–10 por pierna · RIR 1–2" },
-      { "name": "Face pull", "detail": "2 × 12–15 · RIR 1–2" },
-      { "name": "Elevación de talones", "detail": "3 × 12–15 · RIR 1–2" },
-      { "name": "Plancha lateral", "detail": "2 × 30–45 s por lado" }
+      { "name": "Bicicleta estática (calentamiento)", "detail": "8-10 min" },
+      { "name": "Sentadilla frontal o clean pull (explosiva)", "detail": "3-4 × 3-5 (30-70% 1RM)" },
+      { "name": "Press inclinado con barra o mancuernas", "detail": "3 × 6-8 (75-80% 1RM)" },
+      { "name": "Remo Pendlay o T-bar", "detail": "3 × 8-10" },
+      { "name": "Zancada con salto o step-up explosivo", "detail": "3 × 6-8 por pierna" },
+      { "name": "Curl bíceps + extensión tríceps (superserie)", "detail": "3 × 12-15" },
+      { "name": "Plancha lateral", "detail": "3 × 30s por lado" }
     ]
-  },
-  "Sábado": {
-    "titulo": "Recuperación activa",
-    "ejercicios": [
-      { "name": "Caminata", "detail": "20–40 min" },
-      { "name": "Movilidad de cadera", "detail": "5–10 min" },
-      { "name": "Movilidad de tobillo", "detail": "5–10 min" },
-      { "name": "Movilidad de hombros", "detail": "5–10 min" }
-    ]
-  },
-  "Domingo": {
-    "titulo": "Descanso",
-    "ejercicios": []
   }
 }
