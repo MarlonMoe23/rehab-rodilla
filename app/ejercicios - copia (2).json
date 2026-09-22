@@ -1,0 +1,69 @@
+{
+  "Lunes": {
+    "titulo": "Fuerza A — Cuádriceps + glúteos",
+    "ejercicios": [
+      { "name": "Sentadilla", "detail": "4 × 6–8" },
+      { "name": "Step-up", "detail": "3 × 8–10 por pierna" },
+      { "name": "Extensión de pierna en máquina", "detail": "3 × 8–10" },
+      { "name": "Curl femoral en máquina", "detail": "3 × 8–10" },
+      { "name": "Elevación de talón", "detail": "3 × 12–15" },
+      { "name": "Equilibrio a una pierna", "detail": "2 × 30–45 s" }
+    ]
+  },
+  "Martes": {
+    "titulo": "Torso empuje + core",
+    "ejercicios": [
+      { "name": "Press de banca en banco", "detail": "3 × 6–10" },
+      { "name": "Press de hombro sentado con respaldo", "detail": "3 × 8–10" },
+      { "name": "Aperturas en pec deck o polea", "detail": "2 × 10–15" },
+      { "name": "Extensión de tríceps en polea", "detail": "3 × 10–12" },
+      { "name": "Plancha frontal", "detail": "3 × 30–45 s" }
+    ]
+  },
+  "Miércoles": {
+    "titulo": "Control funcional",
+    "ejercicios": [
+      { "name": "Peso muerto rumano", "detail": "3 × 8–10" },
+      { "name": "Split squat", "detail": "3 × 8–10 por pierna" },
+      { "name": "Step-down", "detail": "3 × 8–10 por pierna" },
+      { "name": "Caminata lateral con banda", "detail": "2 × 12 pasos por lado" },
+      { "name": "Equilibrio a una pierna alcanzando diferentes direcciones", "detail": "2 × 30–45 s" },
+      { "name": "Tibial anterior levantando la punta del pie", "detail": "2 × 15–20" }
+    ]
+  },
+  "Jueves": {
+    "titulo": "Torso tracción + core",
+    "ejercicios": [
+      { "name": "Jalón al pecho en polea", "detail": "3 × 6–10" },
+      { "name": "Remo en máquina con pecho apoyado", "detail": "3 × 8–10" },
+      { "name": "Curl de bíceps con barra o mancuerna", "detail": "3 × 8–12" },
+      { "name": "Face pull en polea", "detail": "2 × 12–15" },
+      { "name": "Plancha lateral", "detail": "2 × 30–45 s por lado" }
+    ]
+  },
+  "Viernes": {
+    "titulo": "Fuerza B — Unilateral + cadena posterior",
+    "ejercicios": [
+      { "name": "Sentadilla búlgara", "detail": "3 × 8–10 por pierna" },
+      { "name": "Hip thrust", "detail": "3 × 8–10" },
+      { "name": "Extensión de pierna en máquina", "detail": "3 × 10–12" },
+      { "name": "Curl femoral en máquina", "detail": "3 × 10–12" },
+      { "name": "Step-up", "detail": "2 × 10 por pierna" },
+      { "name": "Sóleo", "detail": "3 × 15–20" }
+    ]
+  },
+  "Sábado": {
+    "titulo": "Recuperación activa",
+    "ejercicios": [
+      { "name": "Movilidad de tobillo", "detail": "" },
+      { "name": "Movilidad de cadera", "detail": "" },
+      { "name": "Equilibrio a una pierna", "detail": "2 × 30–45 s" }
+    ]
+  },
+  "Domingo": {
+    "titulo": "Descanso",
+    "ejercicios": [
+      { "name": "Caminata", "detail": "" },
+    ]
+  }
+}
