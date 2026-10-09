@@ -1,38 +1,254 @@
 {
-  "Lunes": {
-    "titulo": "Sentadilla + empuje horizontal (fuerza e hipertrofia)",
-    "ejercicios": [
-      { "name": "Bicicleta estática (calentamiento)", "detail": "8-10 min" },
-      { "name": "Sentadilla trasera (back squat)", "detail": "3 × 4-6 (≥80% 1RM)" },
-      { "name": "Press banca plano", "detail": "3 × 6-8 (75-80% 1RM)" },
-      { "name": "Peso muerto rumano", "detail": "3 × 10-12 (60-70% 1RM)" },
-      { "name": "Remo con mancuerna o polea", "detail": "3 × 10-12" },
-      { "name": "Elevaciones laterales", "detail": "3 × 12-15" },
-      { "name": "Plancha", "detail": "3 × 30-45s" }
+  "plan": {
+    "objetivo": "Fuerza como prioridad, mixto",
+    "nivel": "Principiante-intermedio, 4 meses de entrenamiento",
+    "edad": 51,
+    "peso_kg": 78,
+    "altura_cm": 170,
+    "dias_entrenamiento": 4,
+    "duracion_sesion": "2 horas",
+    "duracion_bloque": "8 semanas",
+    "metodo_intensidad": "RPE/RIR",
+    "nota_1rm": "No necesitas calcular 1RM. Usa RPE. Si quieres estimar: 1RM ≈ peso × (1 + reps/30) para reps ≤10."
+  },
+  "semana": {
+    "Lunes": {
+      "titulo": "Empuje horizontal + tracción",
+      "calentamiento": "Bici estática 8-10 min + movilidad",
+      "ejercicios": [
+        {
+          "name": "Press banca plano",
+          "series": "4",
+          "reps": "4-6",
+          "rpe": "7-8",
+          "descanso": "3 min"
+        },
+        {
+          "name": "Remo con barra o mancuerna",
+          "series": "4",
+          "reps": "6-8",
+          "rpe": "8",
+          "descanso": "2-3 min"
+        },
+        {
+          "name": "Press militar con mancuernas",
+          "series": "3",
+          "reps": "8-10",
+          "rpe": "8",
+          "descanso": "2 min"
+        },
+        {
+          "name": "Elevaciones laterales",
+          "series": "3",
+          "reps": "12-15",
+          "rpe": "8-9",
+          "descanso": "60-90 s"
+        },
+        {
+          "name": "Face pull",
+          "series": "3",
+          "reps": "15",
+          "rpe": "8",
+          "descanso": "60 s"
+        },
+        {
+          "name": "Curl bíceps",
+          "series": "3",
+          "reps": "10-12",
+          "rpe": "8-9",
+          "descanso": "60-90 s"
+        }
+      ],
+      "core": "10 min"
+    },
+    "Martes": {
+      "titulo": "Sentadilla + cadena posterior",
+      "calentamiento": "Bici estática 8-10 min + movilidad",
+      "ejercicios": [
+        {
+          "name": "Sentadilla trasera",
+          "series": "4",
+          "reps": "4-6",
+          "rpe": "7-8",
+          "descanso": "3 min"
+        },
+        {
+          "name": "Peso muerto rumano",
+          "series": "3",
+          "reps": "8-10",
+          "rpe": "7-8",
+          "descanso": "2-3 min"
+        },
+        {
+          "name": "Prensa de piernas o zancadas",
+          "series": "3",
+          "reps": "10-12",
+          "rpe": "8",
+          "descanso": "2 min"
+        },
+        {
+          "name": "Curl femoral",
+          "series": "3",
+          "reps": "10-12",
+          "rpe": "8",
+          "descanso": "60-90 s"
+        },
+        {
+          "name": "Gemelos",
+          "series": "4",
+          "reps": "12-15",
+          "rpe": "8-9",
+          "descanso": "60 s"
+        }
+      ],
+      "core": "10 min"
+    },
+    "Miércoles": {
+      "titulo": "Cardio para grasa",
+      "calentamiento": "No requerido",
+      "ejercicios": [
+        {
+          "name": "Bici, caminata inclinada o elíptica",
+          "detail": "30-45 min en zona 2 (puedes hablar sin ahogarte)",
+          "rpe": "5-6",
+          "descanso": "No aplica"
+        }
+      ],
+      "core": "Opcional",
+      "nota": "Si solo haces 4 días, añade 15-20 min de bici al final de lunes y jueves, y camina 8.000-10.000 pasos diarios."
+    },
+    "Jueves": {
+      "titulo": "Empuje vertical + tracción",
+      "calentamiento": "Bici estática 8-10 min + movilidad",
+      "ejercicios": [
+        {
+          "name": "Press inclinado con barra o mancuernas",
+          "series": "4",
+          "reps": "6-8",
+          "rpe": "7-8",
+          "descanso": "3 min"
+        },
+        {
+          "name": "Dominadas asistidas con banda o máquina, o jalón al pecho",
+          "series": "4",
+          "reps": "6-10",
+          "rpe": "8",
+          "descanso": "2-3 min"
+        },
+        {
+          "name": "Remo Pendlay o T-bar",
+          "series": "4",
+          "reps": "8-10",
+          "rpe": "8",
+          "descanso": "2-3 min"
+        },
+        {
+          "name": "Press militar sentado o de pie",
+          "series": "3",
+          "reps": "8-10",
+          "rpe": "8",
+          "descanso": "2 min"
+        },
+        {
+          "name": "Face pull",
+          "series": "3",
+          "reps": "15",
+          "rpe": "8",
+          "descanso": "60 s"
+        },
+        {
+          "name": "Curl bíceps + extensión tríceps en superserie",
+          "series": "3",
+          "reps": "12-15",
+          "rpe": "8-9",
+          "descanso": "60-90 s"
+        }
+      ],
+      "core": "10 min"
+    },
+    "Viernes": {
+      "titulo": "Peso muerto + potencia",
+      "calentamiento": "Bici estática 8-10 min + movilidad",
+      "ejercicios": [
+        {
+          "name": "Peso muerto convencional o sumo",
+          "series": "4",
+          "reps": "3-5",
+          "rpe": "7-8",
+          "descanso": "3-4 min"
+        },
+        {
+          "name": "Sentadilla frontal",
+          "series": "3",
+          "reps": "5-6",
+          "rpe": "7-8",
+          "descanso": "3 min"
+        },
+        {
+          "name": "Zancada con salto o step-up explosivo",
+          "series": "3",
+          "reps": "6-8 por pierna",
+          "rpe": "7-8",
+          "descanso": "90 s",
+          "nota": "Si hay molestia de rodilla, usa step-up controlado."
+        },
+        {
+          "name": "Hip thrust",
+          "series": "3",
+          "reps": "10-12",
+          "rpe": "8",
+          "descanso": "90 s"
+        },
+        {
+          "name": "Gemelos",
+          "series": "4",
+          "reps": "12-15",
+          "rpe": "8-9",
+          "descanso": "60 s"
+        }
+      ],
+      "core": "10 min"
+    }
+  },
+  "progresion": {
+    "semanas_1_3": "Acumulación. Empieza RPE 6-7 y sube a 7-8.",
+    "semana_4": "Descarga. Reduce series a la mitad, RPE 5-6.",
+    "semanas_5_7": "Intensificación. Sube peso si completas todas las reps con RPE ≤8.",
+    "semana_8": "Descarga o prueba suave de 3-5RM en básicos.",
+    "regla_doble_progresion": {
+      "basicos": "Si completas 4×6 con RPE ≤8, sube 2,5 kg en tren superior o 5 kg en tren inferior.",
+      "si_no_completas": "Repite peso y suma 1 rep por serie hasta llegar al tope.",
+      "accesorios": "Si completas 3×12-15, sube el peso mínimo."
+    },
+    "descansos": {
+      "basicos_fuerza": "3-4 min",
+      "accesorios_hipertrofia": "60-120 s"
+    }
+  },
+  "core": {
+    "frecuencia": "3-4 días por semana, 10 min",
+    "nota": "No hace falta todos los días. Evita crunch con peso diario si notas carga lumbar.",
+    "rutina": [
+      "Plancha frontal 3×30-45 s",
+      "Dead bug 3×8-10 por lado",
+      "Pallof press 3×12",
+      "Rueda abdominal 3×8-12",
+      "Elevación de piernas colgado 3×8-12"
     ]
   },
-  "Miércoles": {
-    "titulo": "Peso muerto + tracción (fuerza e hipertrofia)",
-    "ejercicios": [
-      { "name": "Bicicleta estática (calentamiento)", "detail": "8-10 min" },
-      { "name": "Peso muerto convencional o sumo", "detail": "3 × 4-6 (≥80% 1RM)" },
-      { "name": "Dominadas o jalón al pecho", "detail": "3 × 6-10" },
-      { "name": "Prensa de piernas o zancadas", "detail": "3 × 10-12 (60-75% 1RM)" },
-      { "name": "Press militar con mancuernas", "detail": "3 × 10-12" },
-      { "name": "Curl femoral o hip thrust", "detail": "3 × 12-15" },
-      { "name": "Dead bug o rueda abdominal", "detail": "3 × 10-12" }
-    ]
+  "cardio_grasa": {
+    "principal": "Dieta en déficit calórico moderado.",
+    "proteina": "1,6-2,2 g/kg → 125-170 g/día.",
+    "sueno": "7-8 h.",
+    "cardio_zona_2": "2-4 sesiones de 30-45 min si puedes. Si solo 4 días, añádelo al final de 2 sesiones.",
+    "pasos": "8.000-10.000 pasos diarios."
   },
-  "Viernes": {
-    "titulo": "Potencia + empuje vertical",
-    "ejercicios": [
-      { "name": "Bicicleta estática (calentamiento)", "detail": "8-10 min" },
-      { "name": "Sentadilla frontal o clean pull (explosiva)", "detail": "3-4 × 3-5 (30-70% 1RM)" },
-      { "name": "Press inclinado con barra o mancuernas", "detail": "3 × 6-8 (75-80% 1RM)" },
-      { "name": "Remo Pendlay o T-bar", "detail": "3 × 8-10" },
-      { "name": "Zancada con salto o step-up explosivo", "detail": "3 × 6-8 por pierna" },
-      { "name": "Curl bíceps + extensión tríceps (superserie)", "detail": "3 × 12-15" },
-      { "name": "Plancha lateral", "detail": "3 × 30s por lado" }
-    ]
-  }
+  "notas_seguridad": [
+    "Calienta 10-15 min siempre.",
+    "Técnica antes que peso.",
+    "No fallo en básicos.",
+    "Controla respiración; no aguantes el aire en exceso.",
+    "Si aparece dolor articular, cambia ejercicio.",
+    "Chequeo médico reciente si no lo tienes."
+  ]
 }
