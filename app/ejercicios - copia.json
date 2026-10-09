@@ -2,47 +2,58 @@
   "Lunes": {
     "titulo": "Empuje horizontal + tracción",
     "ejercicios": [
-      { "name": "Bicicleta estática (calentamiento)", "detail": "8-10 min" },
-      { "name": "Press banca plano", "detail": "3 × 6-8 (75-80% 1RM)" },
-      { "name": "Remo con mancuerna o polea", "detail": "3 × 10-12" },
-      { "name": "Press militar con mancuernas", "detail": "3 × 10-12" },
-      { "name": "Elevaciones laterales", "detail": "3 × 12-15" }
+      { "name": "Bicicleta estática (calentamiento)", "detail": "8-10 min + movilidad" },
+      { "name": "Press banca plano", "detail": "4 × 4-6 @ RPE 7-8 · desc. 3 min" },
+      { "name": "Remo con barra o mancuerna", "detail": "4 × 6-8 @ RPE 8 · desc. 2-3 min" },
+      { "name": "Press militar con mancuernas", "detail": "3 × 8-10 @ RPE 8" },
+      { "name": "Elevaciones laterales", "detail": "3 × 12-15 @ RPE 8-9" },
+      { "name": "Face pull", "detail": "3 × 15" },
+      { "name": "Curl bíceps", "detail": "3 × 10-12" },
+      { "name": "Core (plancha, dead bug, pallof)", "detail": "10 min" }
     ]
   },
   "Martes": {
     "titulo": "Sentadilla + cadena posterior",
     "ejercicios": [
-      { "name": "Bicicleta estática (calentamiento)", "detail": "8-10 min" },
-      { "name": "Sentadilla trasera (back squat)", "detail": "3 × 4-6 (≥80% 1RM)" },
-      { "name": "Peso muerto rumano", "detail": "3 × 10-12 (60-70% 1RM)" },
-      { "name": "Prensa de piernas o zancadas", "detail": "3 × 10-12 (60-75% 1RM)" },
-      { "name": "Curl femoral", "detail": "3 × 12-15" }
+      { "name": "Bicicleta estática (calentamiento)", "detail": "8-10 min + movilidad" },
+      { "name": "Sentadilla trasera", "detail": "4 × 4-6 @ RPE 7-8 · desc. 3 min" },
+      { "name": "Peso muerto rumano", "detail": "3 × 8-10 @ RPE 7-8" },
+      { "name": "Prensa de piernas o zancadas", "detail": "3 × 10-12 @ RPE 8" },
+      { "name": "Curl femoral", "detail": "3 × 10-12 @ RPE 8" },
+      { "name": "Gemelos", "detail": "4 × 12-15" },
+      { "name": "Core (plancha, dead bug, pallof)", "detail": "10 min" }
     ]
   },
   "Miércoles": {
-    "titulo": "Cardio y recuperación activa",
+    "titulo": "Cardio para grasa",
     "ejercicios": [
-      { "name": "Bicicleta estática (ritmo moderado)", "detail": "30-40 min" }
+      { "name": "Bici, caminata inclinada o elíptica", "detail": "30-45 min zona 2 (puedes hablar sin ahogarte)" },
+      { "name": "Pasos diarios", "detail": "8.000-10.000 pasos" }
     ]
   },
   "Jueves": {
     "titulo": "Empuje vertical + tracción",
     "ejercicios": [
-      { "name": "Bicicleta estática (calentamiento)", "detail": "8-10 min" },
-      { "name": "Press inclinado con barra o mancuernas", "detail": "3 × 6-8 (75-80% 1RM)" },
-      { "name": "Dominadas o jalón al pecho", "detail": "3 × 6-10" },
-      { "name": "Remo Pendlay o T-bar", "detail": "3 × 8-10" },
-      { "name": "Curl bíceps + extensión tríceps (superserie)", "detail": "3 × 12-15" }
+      { "name": "Bicicleta estática (calentamiento)", "detail": "8-10 min + movilidad" },
+      { "name": "Press inclinado con barra o mancuernas", "detail": "4 × 6-8 @ RPE 7-8 · desc. 3 min" },
+      { "name": "Dominadas asistidas / jalón al pecho", "detail": "4 × 6-10 @ RPE 8 (asistidas con banda o máquina)" },
+      { "name": "Remo Pendlay o T-bar", "detail": "4 × 8-10 @ RPE 8" },
+      { "name": "Press militar sentado o de pie", "detail": "3 × 8-10 @ RPE 8" },
+      { "name": "Face pull", "detail": "3 × 15" },
+      { "name": "Curl bíceps + extensión tríceps (superserie)", "detail": "3 × 12-15" },
+      { "name": "Core (plancha, dead bug, pallof)", "detail": "10 min" }
     ]
   },
   "Viernes": {
     "titulo": "Peso muerto + potencia",
     "ejercicios": [
-      { "name": "Bicicleta estática (calentamiento)", "detail": "8-10 min" },
-      { "name": "Peso muerto convencional o sumo", "detail": "3 × 4-6 (≥80% 1RM)" },
-      { "name": "Sentadilla frontal", "detail": "3-4 × 3-5 (30-70% 1RM)" },
-      { "name": "Zancada con salto o step-up explosivo", "detail": "3 × 6-8 por pierna" },
-      { "name": "Hip thrust", "detail": "3 × 12-15" }
+      { "name": "Bicicleta estática (calentamiento)", "detail": "8-10 min + movilidad" },
+      { "name": "Peso muerto convencional o sumo", "detail": "4 × 3-5 @ RPE 7-8 · desc. 3-4 min" },
+      { "name": "Sentadilla frontal", "detail": "3 × 5-6 @ RPE 7-8 · desc. 3 min" },
+      { "name": "Zancada con salto o step-up explosivo", "detail": "3 × 6-8 por pierna (step-up controlado si molesta rodilla)" },
+      { "name": "Hip thrust", "detail": "3 × 10-12 @ RPE 8" },
+      { "name": "Gemelos", "detail": "4 × 12-15" },
+      { "name": "Core (plancha, dead bug, pallof)", "detail": "10 min" }
     ]
   }
 }

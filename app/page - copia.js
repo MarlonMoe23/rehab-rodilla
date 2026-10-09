@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import exercisesData from "./ejercicios.json";
-import ejerciciosInfo from "./ejercicios_info.json"; // NUEVO
 
 const getEcuadorDate = () => {
   return new Date().toLocaleDateString('en-CA', { timeZone: 'America/Guayaquil' });
@@ -18,17 +17,21 @@ const getDayPlan = (dateStr) => {
   return exercisesData[dayName] || null;
 };
 
+// Suma/resta días a una fecha string YYYY-MM-DD
 const addDays = (dateStr, days) => {
   const d = new Date(dateStr + "T12:00:00");
   d.setDate(d.getDate() + days);
   return d.toLocaleDateString('en-CA', { timeZone: 'America/Guayaquil' });
 };
 
+// Cuenta cuántos ejercicios del plan ACTUAL están marcados como hechos.
+// Ignora checks "huérfanos" que quedaron guardados de un plan anterior.
 const countDoneForPlan = (data, plan) => {
   if (!plan) return 0;
   return plan.ejercicios.filter((ex) => data?.[ex.name]).length;
 };
 
+// --- Utilidades de notas de progresión ---
 const getNotesHistory = (exerciseName) => {
   if (typeof window === "undefined") return {};
   const raw = localStorage.getItem(`notas_${exerciseName}`);
@@ -62,20 +65,12 @@ export default function Home() {
   const [notes, setNotes] = useState({});
   const [streak, setStreak] = useState(0);
   const [mounted, setMounted] = useState(false);
-  const [refreshTick, setRefreshTick] = useState(0);
-  const [infoExercise, setInfoExercise] = useState(null); // NUEVO
+  const [refreshTick, setRefreshTick] = useState(0); // fuerza refresco de últimos 7 días tras guardar
 
   const dayName = getDayName(selectedDate);
   const dayPlan = getDayPlan(selectedDate);
   const ejercicios = dayPlan ? dayPlan.ejercicios : [];
   const totalExercises = ejercicios.length;
-
-  // NUEVO: cerrar modal con Escape
-  useEffect(() => {
-    const onKey = (e) => { if (e.key === "Escape") setInfoExercise(null); };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -84,6 +79,7 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
+  // Cargar checks y notas al cambiar la fecha seleccionada
   useEffect(() => {
     setMounted(true);
     const saved = localStorage.getItem(selectedDate);
@@ -106,11 +102,12 @@ export default function Home() {
     updateStreak();
   }, [selectedDate]);
 
+  // Guardar checks cuando cambien (solo si mounted)
   useEffect(() => {
     if (!mounted) return;
     localStorage.setItem(selectedDate, JSON.stringify(checks));
     updateStreak();
-    setRefreshTick((t) => t + 1);
+    setRefreshTick((t) => t + 1); // asegura que "Últimos 7 días" se recalcule ya con el dato guardado
   }, [checks, selectedDate, mounted]);
 
   useEffect(() => {
@@ -129,6 +126,8 @@ export default function Home() {
     saveNote(exerciseName, selectedDate, text);
   };
 
+  // Usa siempre el estado en memoria (checks) como fuente de verdad para el día
+  // seleccionado — nunca localStorage directo, para evitar datos desactualizados.
   const completedCount = countDoneForPlan(checks, dayPlan);
   const progress = totalExercises > 0
     ? Math.round((completedCount / totalExercises) * 100)
@@ -154,6 +153,8 @@ export default function Home() {
     setStreak(count);
   };
 
+  // Para el día SELECCIONADO usamos el estado `checks` en memoria (siempre al día).
+  // Para los otros 6 días usamos localStorage (no están siendo editados ahora).
   const last7Days = mounted
     ? Array.from({ length: 7 }).map((_, i) => {
         const d = new Date();
@@ -179,9 +180,6 @@ export default function Home() {
   const goToPrevDay = () => setSelectedDate(addDays(selectedDate, -1));
   const goToNextDay = () => setSelectedDate(addDays(selectedDate, 1));
   const goToToday = () => setSelectedDate(today);
-
-  // NUEVO: información del ejercicio abierto en el modal
-  const infoData = infoExercise ? ejerciciosInfo[infoExercise] : null;
 
   return (
     <main className="min-h-screen bg-slate-200 dark:bg-slate-900 p-2 text-slate-900 dark:text-slate-100 transition-colors">
@@ -275,45 +273,24 @@ export default function Home() {
           ) : (
             ejercicios.map((ex) => {
               const lastNote = mounted ? getLastNoteBefore(ex.name, selectedDate) : null;
-              const hasInfo = !!ejerciciosInfo[ex.name]; // NUEVO
               return (
                 <div key={ex.name} className="mb-4 pb-4 border-b dark:border-slate-700 last:border-0 last:pb-0">
-                  {/* NUEVO: separamos checkbox y texto para que el botón "?" no marque el check */}
-                  <div className="flex items-start gap-3">
+                  <label className="flex items-start gap-3 cursor-pointer">
                     <input
                       type="checkbox"
-                      id={`chk-${ex.name}`}
                       checked={checks?.[ex.name] || false}
                       onChange={() => toggleCheck(ex.name)}
                       className="w-5 h-5 accent-blue-600 mt-0.5 flex-shrink-0"
                     />
                     <div className="flex-1">
-                      <div className="flex items-center gap-2 flex-wrap">
-                        <label
-                          htmlFor={`chk-${ex.name}`}
-                          className="font-medium cursor-pointer"
-                        >
-                          {ex.name}
-                        </label>
-                        {hasInfo && (
-                          <button
-                            type="button"
-                            onClick={() => setInfoExercise(ex.name)}
-                            className="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs font-bold hover:bg-blue-200 dark:hover:bg-blue-800 flex items-center justify-center"
-                            aria-label={`Cómo hacer ${ex.name}`}
-                            title="Ver cómo se hace"
-                          >
-                            ?
-                          </button>
-                        )}
-                      </div>
+                      <div className="font-medium">{ex.name}</div>
                       {ex.detail && (
                         <div className="text-sm text-blue-600 dark:text-blue-400 font-mono mt-1">
                           {ex.detail}
                         </div>
                       )}
                     </div>
-                  </div>
+                  </label>
 
                   {lastNote && (
                     <div className="mt-2 ml-8 text-xs text-slate-500 dark:text-slate-400 italic">
@@ -334,66 +311,6 @@ export default function Home() {
           )}
         </div>
       </div>
-
-      {/* NUEVO: Modal de explicación */}
-      {infoExercise && infoData && (
-        <div
-          className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4"
-          onClick={() => setInfoExercise(null)}
-        >
-          <div
-            className="bg-white dark:bg-slate-800 rounded-2xl max-w-lg w-full max-h-[85vh] overflow-y-auto p-5 shadow-2xl border border-slate-300 dark:border-slate-700"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex items-start justify-between gap-3 mb-3">
-              <h3 className="text-lg font-bold pr-2">{infoExercise}</h3>
-              <button
-                type="button"
-                onClick={() => setInfoExercise(null)}
-                className="w-7 h-7 rounded-full bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 flex items-center justify-center font-bold"
-                aria-label="Cerrar"
-              >
-                ✕
-              </button>
-            </div>
-
-            {infoData.musculos && (
-              <div className="mb-3">
-                <span className="text-xs uppercase tracking-wide font-semibold text-slate-500 dark:text-slate-400">
-                  Músculos
-                </span>
-                <p className="text-sm">{infoData.musculos}</p>
-              </div>
-            )}
-
-            {infoData.como && infoData.como.length > 0 && (
-              <div className="mb-3">
-                <span className="text-xs uppercase tracking-wide font-semibold text-slate-500 dark:text-slate-400">
-                  Cómo se hace
-                </span>
-                <ol className="list-decimal list-inside text-sm mt-1 space-y-1">
-                  {infoData.como.map((paso, i) => (
-                    <li key={i}>{paso}</li>
-                  ))}
-                </ol>
-              </div>
-            )}
-
-            {infoData.tips && infoData.tips.length > 0 && (
-              <div className="p-3 bg-yellow-50 dark:bg-yellow-950/40 border border-yellow-200 dark:border-yellow-800 rounded-lg">
-                <span className="text-xs uppercase tracking-wide font-semibold text-yellow-800 dark:text-yellow-300">
-                  Tips
-                </span>
-                <ul className="list-disc list-inside text-sm mt-1 space-y-1 text-yellow-900 dark:text-yellow-100">
-                  {infoData.tips.map((t, i) => (
-                    <li key={i}>{t}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
     </main>
   );
 }

@@ -1,59 +1,242 @@
 {
-  "Lunes": {
-    "titulo": "Empuje horizontal + tracción",
-    "ejercicios": [
-      { "name": "Bicicleta estática (calentamiento)", "detail": "8-10 min + movilidad" },
-      { "name": "Press banca plano", "detail": "4 × 4-6 @ RPE 7-8 · desc. 3 min" },
-      { "name": "Remo con barra o mancuerna", "detail": "4 × 6-8 @ RPE 8 · desc. 2-3 min" },
-      { "name": "Press militar con mancuernas", "detail": "3 × 8-10 @ RPE 8" },
-      { "name": "Elevaciones laterales", "detail": "3 × 12-15 @ RPE 8-9" },
-      { "name": "Face pull", "detail": "3 × 15" },
-      { "name": "Curl bíceps", "detail": "3 × 10-12" },
-      { "name": "Core (plancha, dead bug, pallof)", "detail": "10 min" }
+  "Bicicleta estática (calentamiento)": {
+    "musculos": "Piernas, sistema cardiovascular",
+    "como": [
+      "Ajusta el sillín a la altura de la cadera: al pedalear, la rodilla queda ligeramente flexionada al final.",
+      "Pedalea suave los primeros 2-3 min.",
+      "Sube a un ritmo cómodo en el que puedas hablar.",
+      "Espalda recta, hombros relajados, no te agarres con fuerza al manubrio."
+    ],
+    "tips": ["Sube la temperatura y lubrica articulaciones antes de las pesas."]
+  },
+  "Press banca plano": {
+    "musculos": "Pectoral, deltoides anterior, tríceps",
+    "como": [
+      "Túmbate en el banco con los ojos bajo la barra. Pies firmes en el suelo.",
+      "Junta omóplatos y saca pecho ligeramente. Mantén la curva lumbar natural.",
+      "Agarra la barra un poco más ancho que los hombros.",
+      "Baja la barra controlada hasta rozar el pecho (a la altura del esternón).",
+      "Empuja hacia arriba y ligeramente hacia atrás, sin rebotar."
+    ],
+    "tips": [
+      "Codos a unos 45-60° del torso, no abiertos a 90°.",
+      "Si te molesta el hombro, baja la barra a la línea del pezón, no al cuello."
     ]
   },
-  "Martes": {
-    "titulo": "Sentadilla + cadena posterior",
-    "ejercicios": [
-      { "name": "Bicicleta estática (calentamiento)", "detail": "8-10 min + movilidad" },
-      { "name": "Sentadilla trasera", "detail": "4 × 4-6 @ RPE 7-8 · desc. 3 min" },
-      { "name": "Peso muerto rumano", "detail": "3 × 8-10 @ RPE 7-8" },
-      { "name": "Prensa de piernas o zancadas", "detail": "3 × 10-12 @ RPE 8" },
-      { "name": "Curl femoral", "detail": "3 × 10-12 @ RPE 8" },
-      { "name": "Gemelos", "detail": "4 × 12-15" },
-      { "name": "Core (plancha, dead bug, pallof)", "detail": "10 min" }
-    ]
+  "Remo con barra o mancuerna": {
+    "musculos": "Dorsal, trapecio medio, romboides, bíceps",
+    "como": [
+      "Con barra: pies al ancho de cadera, bisagra de cadera hasta que el torso quede casi paralelo al suelo, rodillas ligeramente flexionadas.",
+      "Agarra la barra, espalda recta, mirada al frente-abajo.",
+      "Tira de la barra hacia el ombligo llevando los codos hacia atrás.",
+      "Junta omóplatos arriba, baja controlado.",
+      "Con mancuerna: apoya una rodilla y una mano en el banco, tira de la mancuerna hacia la cadera."
+    ],
+    "tips": ["No uses impulso de cadera para subir. Si sube el torso, es demasiado peso."]
   },
-  "Miércoles": {
-    "titulo": "Cardio para grasa",
-    "ejercicios": [
-      { "name": "Bici, caminata inclinada o elíptica", "detail": "30-45 min zona 2 (puedes hablar sin ahogarte)" },
-      { "name": "Pasos diarios", "detail": "8.000-10.000 pasos" }
-    ]
+  "Press militar con mancuernas": {
+    "musculos": "Deltoides, tríceps, core",
+    "como": [
+      "Sentado con respaldo o de pie con core apretado.",
+      "Mancuernas a la altura de los hombros, palmas al frente o neutras.",
+      "Empuja hacia arriba hasta casi juntar las mancuernas arriba.",
+      "Baja controlado hasta la altura de las orejas."
+    ],
+    "tips": ["No arquees la espalda; si lo haces, baja el peso.", "Codos ligeramente adelantados, no totalmente a los lados."]
   },
-  "Jueves": {
-    "titulo": "Empuje vertical + tracción",
-    "ejercicios": [
-      { "name": "Bicicleta estática (calentamiento)", "detail": "8-10 min + movilidad" },
-      { "name": "Press inclinado con barra o mancuernas", "detail": "4 × 6-8 @ RPE 7-8 · desc. 3 min" },
-      { "name": "Dominadas asistidas / jalón al pecho", "detail": "4 × 6-10 @ RPE 8 (asistidas con banda o máquina)" },
-      { "name": "Remo Pendlay o T-bar", "detail": "4 × 8-10 @ RPE 8" },
-      { "name": "Press militar sentado o de pie", "detail": "3 × 8-10 @ RPE 8" },
-      { "name": "Face pull", "detail": "3 × 15" },
-      { "name": "Curl bíceps + extensión tríceps (superserie)", "detail": "3 × 12-15" },
-      { "name": "Core (plancha, dead bug, pallof)", "detail": "10 min" }
-    ]
+  "Elevaciones laterales": {
+    "musculos": "Deltoides lateral",
+    "como": [
+      "De pie, mancuernas a los costados, codos ligeramente flexionados.",
+      "Sube los brazos hacia los lados hasta la altura de los hombros.",
+      "Codos ligeramente por encima de las manos.",
+      "Baja lento, controlando 2 s."
+    ],
+    "tips": ["Peso ligero y técnica limpia > peso alto con balanceo.", "No subas por encima de los hombros."]
   },
-  "Viernes": {
-    "titulo": "Peso muerto + potencia",
-    "ejercicios": [
-      { "name": "Bicicleta estática (calentamiento)", "detail": "8-10 min + movilidad" },
-      { "name": "Peso muerto convencional o sumo", "detail": "4 × 3-5 @ RPE 7-8 · desc. 3-4 min" },
-      { "name": "Sentadilla frontal", "detail": "3 × 5-6 @ RPE 7-8 · desc. 3 min" },
-      { "name": "Zancada con salto o step-up explosivo", "detail": "3 × 6-8 por pierna (step-up controlado si molesta rodilla)" },
-      { "name": "Hip thrust", "detail": "3 × 10-12 @ RPE 8" },
-      { "name": "Gemelos", "detail": "4 × 12-15" },
-      { "name": "Core (plancha, dead bug, pallof)", "detail": "10 min" }
-    ]
+  "Face pull": {
+    "musculos": "Deltoides posterior, trapecio, rotadores externos",
+    "como": [
+      "Polea a la altura de la cara, cuerda con dos agarres.",
+      "Agarra la cuerda con las palmas mirándose.",
+      "Tira hacia la cara separando las manos, codos altos.",
+      "Termina con los codos a la altura de los hombros y las manos junto a las orejas.",
+      "Vuelve controlado."
+    ],
+    "tips": ["Excelente para salud de hombro y postura.", "Imagina que tiras hacia tu frente, no hacia el pecho."]
+  },
+  "Curl bíceps": {
+    "musculos": "Bíceps, braquial",
+    "como": [
+      "De pie, mancuernas o barra con las palmas al frente.",
+      "Codos pegados al torso, sin moverlos.",
+      "Sube hasta que el antebrazo toque el bíceps.",
+      "Baja controlado sin balancear el cuerpo."
+    ],
+    "tips": ["No uses impulso de cadera ni de espalda."]
+  },
+  "Core (plancha, dead bug, pallof)": {
+    "musculos": "Recto abdominal, transverso, oblicuos, glúteo",
+    "como": [
+      "Plancha: antebrazos y puntas de los pies apoyados, cuerpo en línea recta. 30-45 s.",
+      "Dead bug: boca arriba, brazos y rodillas arriba. Extiende brazo y pierna opuestos sin despegar la lumbar del suelo. 8-10 por lado.",
+      "Pallof press: polea a la altura del pecho, de lado. Empuja la manija al frente resistiendo la rotación. 12 por lado."
+    ],
+    "tips": ["Si la lumbar se arquea en plancha, apoya rodillas.", "Más vale 30 s bien que 60 s mal."]
+  },
+  "Sentadilla trasera": {
+    "musculos": "Cuádriceps, glúteo, aductores, core",
+    "como": [
+      "Barra en trapecio (alto) o deltoides posterior (bajo). Pies al ancho de hombros o algo más.",
+      "Puntas ligeramente hacia fuera.",
+      "Respira, aprieta el core, desciende empujando la cadera atrás y flexionando rodillas.",
+      "Baja hasta que el muslo quede paralelo al suelo (o hasta donde llegues sin perder curva lumbar).",
+      "Sube empujando con los pies, rodillas alineadas con los pies."
+    ],
+    "tips": ["Rodillas no se van hacia dentro.", "Talones pegados al suelo.", "Si tienes dudas de profundidad, mejor quedarte un poco alto y subir peso."]
+  },
+  "Peso muerto rumano": {
+    "musculos": "Isquiotibiales, glúteo, espalda baja",
+    "como": [
+      "De pie, barra o mancuernas frente a los muslos.",
+      "Rodillas ligeramente flexionadas (no es sentadilla).",
+      "Bisagra de cadera: lleva el culo hacia atrás, la barra roza las piernas.",
+      "Baja hasta media espinilla o hasta sentir estiramiento en isquios.",
+      "Sube apretando glúteos, sin hiperextender la espalda arriba."
+    ],
+    "tips": ["Espalda siempre recta.", "Si sientes más la lumbar que los isquios, es que flexionas demasiado las rodillas."]
+  },
+  "Prensa de piernas o zancadas": {
+    "musculos": "Cuádriceps, glúteo",
+    "como": [
+      "Prensa: espalda y culo pegados al respaldo, pies al ancho de hombros. Baja hasta 90° de rodilla, empuja sin bloquear del todo.",
+      "Zancadas: paso al frente, baja hasta que ambas rodillas queden a ~90°, la de atrás casi toca el suelo. Empuja con la pierna de adelante."
+    ],
+    "tips": ["En prensa, no bajes tanto que la lumbar se despegue.", "En zancadas, torso recto."]
+  },
+  "Curl femoral": {
+    "musculos": "Isquiotibiales",
+    "como": [
+      "Tumbado o sentado en la máquina, rodilla alineada con el eje.",
+      "Flexiona la rodilla llevando el talón hacia el glúteo.",
+      "Sube controlado, no des impulso."
+    ],
+    "tips": ["Baja lento (2-3 s): es donde más se gana."]
+  },
+  "Gemelos": {
+    "musculos": "Gastrocnemio, sóleo",
+    "como": [
+      "De pie en máquina, escalón o con mancuernas.",
+      "Sube de puntillas lo máximo posible.",
+      "Aguanta 1 s arriba.",
+      "Baja lento hasta sentir estiramiento completo."
+    ],
+    "tips": ["Rango completo, sin rebotes."]
+  },
+  "Bici, caminata inclinada o elíptica": {
+    "musculos": "Cardio, piernas",
+    "como": [
+      "Elige bici, caminadora inclinada o elíptica.",
+      "Trabaja a un ritmo en el que puedas hablar sin ahogarte (zona 2).",
+      "Mantén 30-45 min.",
+      "Si no tienes monitor de pulso, usa la charla como referencia."
+    ],
+    "tips": ["Mejor ritmo constante que picos altos.", "Calienta 5 min y baja 5 min."]
+  },
+  "Pasos diarios": {
+    "musculos": "Cardio suave",
+    "como": [
+      "Camina a lo largo del día.",
+      "Objetivo: 8.000 a 10.000 pasos.",
+      "Puedes repartirlos en 2-3 caminatas cortas."
+    ],
+    "tips": ["Es la forma más fácil de subir gasto calórico sin cansar."]
+  },
+  "Press inclinado con barra o mancuernas": {
+    "musculos": "Pectoral superior, deltoides anterior, tríceps",
+    "como": [
+      "Banco a 30-45°.",
+      "Con barra: agarre algo más ancho que hombros, baja al pecho alto.",
+      "Con mancuernas: brazos a los lados, baja hasta que queden a la altura del pecho alto.",
+      "Empuja hacia arriba y ligeramente hacia atrás."
+    ],
+    "tips": ["No pongas el banco a 60°+ o se convierte en press militar.", "Codos a 45° del torso."]
+  },
+  "Dominadas asistidas / jalón al pecho": {
+    "musculos": "Dorsal, bíceps, romboides",
+    "como": [
+      "Dominadas asistidas: usa banda elástica o máquina asistida. Agarre prono algo más ancho que hombros.",
+      "Tira del cuerpo hacia arriba llevando el pecho a la barra.",
+      "Baja controlado hasta extender brazos.",
+      "Jalón al pecho: sentado, agarre ancho, tira de la barra hasta el pecho, codos abajo y hacia atrás. Sube controlado."
+    ],
+    "tips": ["No te balancees.", "Si solo haces 1 dominada estricta, trabaja con asistidas e intenta reducir la ayuda cada semana."]
+  },
+  "Remo Pendlay o T-bar": {
+    "musculos": "Dorsal, trapecio, romboides, bíceps",
+    "como": [
+      "Pendlay: barra en el suelo, torso paralelo al piso. Tira explosivo de la barra al esternón, vuelve a dejarla en el suelo.",
+      "T-bar: apoyado en la máquina, agarre neutro. Tira hacia el abdomen juntando omóplatos."
+    ],
+    "tips": ["Sin tirones de cadera.", "Pecho fuera, no redondees la espalda."]
+  },
+  "Press militar sentado o de pie": {
+    "musculos": "Deltoides, tríceps, core",
+    "como": [
+      "Barra a la altura de las clavículas, agarre algo más ancho que hombros.",
+      "Aprieta glúteos y core.",
+      "Empuja la barra por encima de la cabeza, mete la cabeza al pasar la barra.",
+      "Baja controlado a la altura de la barbilla/clavículas."
+    ],
+    "tips": ["Si la espalda se arquea mucho, hazlo sentado con respaldo.", "No rebotes en la parte baja."]
+  },
+  "Curl bíceps + extensión tríceps (superserie)": {
+    "musculos": "Bíceps + tríceps",
+    "como": [
+      "Haz una serie de curl bíceps y, sin descansar, una serie de extensión de tríceps (polea, mancuerna o barra).",
+      "Descansa 60-90 s entre rondas.",
+      "Repite 3 rondas."
+    ],
+    "tips": ["Sirve para ahorrar tiempo y dar más estímulo al brazo."]
+  },
+  "Peso muerto convencional o sumo": {
+    "musculos": "Cadena posterior completa, espalda baja, glúteo, femoral, trapecio",
+    "como": [
+      "Pies al ancho de cadera (convencional) o muy abiertos con puntas hacia fuera (sumo).",
+      "Barra pegada a las espinillas.",
+      "Agarra la barra, pecho fuera, espalda recta, cadera abajo.",
+      "Empuja el suelo con los pies y sube barra pegada al cuerpo.",
+      "Bloquea con cadera y glúteo arriba, sin hiperextender.",
+      "Baja controlando hasta el suelo."
+    ],
+    "tips": ["Es el ejercicio que más exige técnica: si dudas, pide a alguien que te grabe.", "Nunca redondees la espalda."]
+  },
+  "Sentadilla frontal": {
+    "musculos": "Cuádriceps, core, glúteo",
+    "como": [
+      "Barra sobre los deltoides anteriores, codos altos, manos bajo la barra.",
+      "Pies al ancho de hombros.",
+      "Baja manteniendo torso lo más vertical posible.",
+      "Sube empujando con los pies, codos siempre altos."
+    ],
+    "tips": ["Si te cuesta la movilidad de muñeca, usa agarre cruzado o correas.", "Torso vertical: es la diferencia con la sentadilla trasera."]
+  },
+  "Zancada con salto o step-up explosivo": {
+    "musculos": "Cuádriceps, glúteo, potencia",
+    "como": [
+      "Zancada con salto: en posición de zancada, salta y cambia de pierna en el aire. Aterriza suave.",
+      "Step-up explosivo: sube a un cajón con una pierna, empuja fuerte, baja controlado."
+    ],
+    "tips": ["Aterriza con rodilla ligeramente flexionada.", "Si te molesta la rodilla, haz step-up controlado sin salto."]
+  },
+  "Hip thrust": {
+    "musculos": "Glúteo, femoral, core",
+    "como": [
+      "Espalda alta apoyada en un banco, barra sobre la cadera (con almohadilla).",
+      "Pies al ancho de hombros, rodillas a 90° arriba.",
+      "Empuja con los talones y sube la cadera hasta alinear torso y muslos.",
+      "Aprieta glúteos arriba 1 s, baja controlado."
+    ],
+    "tips": ["No hiperextiendas la lumbar arriba: el movimiento es de cadera, no de espalda."]
   }
 }
